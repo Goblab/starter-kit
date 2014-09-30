@@ -1,0 +1,38 @@
+<div id="wrap">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">RPM</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li>{{#link-to-animated "index" animations="main:slideLeft"}}Home{{/link-to-animated }}</li>
+          <li>{{#link-to-animated "entries" animations="main:slideLeft"}}Entries{{/link-to-animated}}</li>
+          {{#if session.isAuthenticated}}
+            {{#if session.currentUser.profile}}
+                <li>{{#link-to-animated "profile" session.currentUser.profile animations="main:slideLeft"}}Profile{{/link-to-animated}}</li>
+              {{else}}
+                <li>{{#link-to-animated "new_profile" animations="main:slideLeft"}}Create Profile{{/link-to-animated}}</li>
+              {{/if}}
+          {{/if}}
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            {{#if session.isAuthenticated}}
+              <li><a href="#" {{action "invalidateSession"}}>Logout</a></li>
+              
+            {{else}}
+              <li>{{#link-to-animated "login" animations="main:slideLeft"}}Sign In{{/link-to-animated}}</li>
+              <li>{{#link-to-animated "signup" animations="main:slideLeft"}}Create Account{{/link-to-animated}}</li>
+            {{/if}}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{animated-outlet name="main"}}
+</div>

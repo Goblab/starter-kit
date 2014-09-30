@@ -1,0 +1,51 @@
+{
+  "name": "goblab-starter",
+  "version": "0.3.7",
+  "description": "Boilerplate for Ember, Sass, Express, MongoDB",
+  "keywords": [
+    "scaffold",
+    "generator",
+    "framework",
+    "boilerplate",
+    "ember-tools",
+    "mongoose",
+    "bootstrap",
+    "skeleton",
+    "express",
+    "mongodb",
+    "crud",
+    "sass",
+    "scss",
+    "rest",
+    "ember",
+    "mvc"
+  ],
+  "homepage": "https://bitbucket.org/mbiondo/goblab-starter/",
+  "bugs": "https://bitbucket.org/mbiondo/goblab-starter/issues",
+  "author": "Maximiliano Biondo",
+  "repository": {
+    "type": "git",
+    "url": "git://bitbucket.org/mbiondo/goblab-starter.git"
+    
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "node_modules/.bin/mocha test --reporter spec"
+  },
+  "dependencies": {
+    "express": "~3.4.7",
+    "socket.io": "*",
+    "mongoose": "~3.8.4",
+    "node-sass": "~0.8.0",
+    "passport": "*",
+    "passport-local": "*",
+    "bcrypt": "*",
+    "sequelize": "~1.7.0-rc2",
+    "sqlite3": "~2.2.0",
+    "mysql": "~2.0.1"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "license": "MIT"
+}

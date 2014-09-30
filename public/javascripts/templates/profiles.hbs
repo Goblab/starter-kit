@@ -1,0 +1,27 @@
+<h2>Profiles</h2>
+
+{{#linkTo "new_profile"}}New Profile{{/linkTo}}
+
+<table>
+  <thead>
+    <th>age</th>
+    <th>name</th>
+    <th>last_name</th>
+    <th>string</th>
+    <th>avatar</th>
+  </thead>
+  <tbody>
+    {{#each profile in controller}}
+    <tr>
+      <td>{{ profile.age }}</td>
+      <td>{{ profile.name }}</td>
+      <td>{{ profile.last_name }}</td>
+      <td>{{ profile.string }}</td>
+      <td>{{ profile.avatar }}</td>
+      <td>{{#linkTo "profile" profile }}view{{/linkTo}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+

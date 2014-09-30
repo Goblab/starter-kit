@@ -1,0 +1,16 @@
+<div class="container">
+  <h3>Entry Template</h3>
+  <div class='wysiwyg-preview'>
+  	<p>{{{message}}}</p>
+  </div>
+
+  <div class="btn-group">
+    {{#link-to-animated "entries" classNames="btn btn-default" animations="main:slideLeft"}}<i class="fa fa-long-arrow-left"></i> All Entries{{/link-to-animated}}
+  	{{#if session.isAuthenticated}}
+      {{#if canEdit}}
+    	 {{#link-to-animated "edit_entry" model classNames="btn btn-default" animations="main:slideLeft"}}<i class="fa fa-pencil"></i> Edit{{/link-to-animated}}
+    	 <a href="#" class="btn btn-default" {{action "destroy"}}><i class="fa fa-trash-o"></i> Destroy</a>
+      {{/if}}
+    {{/if}}
+  </div>
+</div>
