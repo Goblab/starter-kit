@@ -18,9 +18,6 @@ Ember.Application.initializer({
   }
 });
 
-
-
-
 var App = Ember.Application.create({
     LOG_TRANSITIONS: true,
     Socket: EmberSockets.extend({

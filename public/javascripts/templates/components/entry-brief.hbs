@@ -1,17 +1,14 @@
 <div class='wysiwyg-preview row'>
 	<div class="col-sm-3">
 		<small>
-			
 			{{formattedDate}}<br/>
 			{{#link-to "user_profile" model.author}}
 				{{model.author.username}}
 			{{/link-to}}
 		</small>
-		
 	</div>
-	<div class="col-sm-9 ember-script-hide">
+	<div class="col-sm-9">
 		<p>{{{model.message}}}</p>
 		{{#link-to "entry" model class="pull-left"}}<i class="fa fa-eye"></i> View more{{/link-to}}
 	</div>
-	
 </div>

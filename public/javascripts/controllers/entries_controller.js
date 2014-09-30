@@ -1,9 +1,16 @@
-var EntriesController = Ember.ArrayController.extend({
+var EntriesController = Em.PaginationController.extend({
+
+	modelInfo: {
+    	store: 'entry',
+  	},
+
 	sortProperties: ['createdAt'],
 	sortAscending: false,
+
 	sockets: {
 		new_entry: function(data) {
 	    	this.get('store').find('entry', data).then(function (model) {
+	    		console.log(model);
 	    		model.reload();
 	    	});
 		},
