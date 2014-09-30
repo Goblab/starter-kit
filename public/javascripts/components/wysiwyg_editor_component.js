@@ -11,7 +11,6 @@ var WysiwygEditorComponent = Ember.Component.extend({
     var _this = this;
     var btnSize = this.get('btnSize');
     var height = this.get('height');
-
     this.$('textarea').summernote({
       height: height,
       toolbar: [
