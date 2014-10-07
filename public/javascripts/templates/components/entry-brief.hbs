@@ -1,14 +1,31 @@
-<div class='wysiwyg-preview row'>
-	<div class="col-sm-3">
-		<small>
-			{{formattedDate}}<br/>
-			{{#link-to "user_profile" model.author}}
+<div class='entries-simple row'>
+	<div class="row">
+		<div class="col-md-2">
+			<img src="" alt="">
+		</div>
+		<div class="col-md-10 entrie-simple-summary">
+			{{#link-to "user_profile" model.author class="h3"}}
 				{{model.author.username}}
 			{{/link-to}}
-		</small>
+			<small>
+				<i class="fa fa-clock-o"></i>{{formattedDate}}
+			</small>
+			<p>{{{model.message}}}</p>
+		</div>
 	</div>
-	<div class="col-sm-9">
-		<p>{{{model.message}}}</p>
-		{{#link-to "entry" model class="pull-left"}}<i class="fa fa-eye"></i> View more{{/link-to}}
+	<hr>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-2">
+			<ul class="nav nav-pills entries-simple-btn">
+			  <li>
+			  	{{#link-to-animated "entry" model class="pull-left" animations="main:slideRight"}}
+			  		<i class="fa fa-comments"></i> Ver completo
+			  	{{/link-to-animated}}
+			  </li>
+			  <li class="disabled">{{#link-to "entry" model class="pull-left"}}<i class="fa fa-star"></i> Favoritos{{/link-to}}</li>
+			</ul>
+		</div>
 	</div>
 </div>
+
+

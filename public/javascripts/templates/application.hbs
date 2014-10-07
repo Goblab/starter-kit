@@ -1,38 +1,50 @@
 <div id="wrap">
-  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
+   <header class="navbar-simple navbar-fixed-top" role="navigation">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">RPM</a>
+         <button type="button" class="navbar-simple-toggle pull-left" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+         {{#link-to-animated "index" animations="main:slideLeft" class="navbar-simple-logo"}}
+            <svg version="1.1" x="0px" y="0px" width="38.875px" height="48.819px" viewBox="0 0 38.875 48.819" enable-background="new 0 0 38.875 48.819" xml:space="preserve">
+            <path fill="#A4BFDD" d="M36.176,22.326h-0.212H22.107c-1.386,0-2.207,0.937-2.207,3.247v2.218c0,2.311,0.821,3.043,2.207,3.043
+               h4.518l-8.604,8.657l-0.005,0.121c-0.008-0.003-0.017,0.05-0.025,0.047c-4.693-1.849-7.042-6.775-7.042-14.841
+               c0-10.464,3.996-15.683,11.989-15.683c3.465,0,6.468,0.561,9.009,1.67c0.877,0.371,1.386,0.558,1.524,0.558
+               c0.832,0,1.79-0.83,2.876-2.493c1.085-1.664,1.629-3.002,1.629-4.019c0-1.339-1.629-2.483-4.886-3.43
+               C29.834,0.474,26.519,0,23.147,0C7.715,0,0,8.224,0,24.671c0,8.548,1.859,14.843,5.579,18.885c1.344,1.461,2.953,2.657,4.825,3.59
+               c1.427,0.711,3.007,1.269,4.74,1.673l8.662-8.087l6.492-6.127v4.013c0,1.386,0.407,1.667,2.718,1.667h2.218
+               c2.31,0,3.432-0.476,3.432-1.862l0.139-12.922v-0.03V24.88C38.804,23.032,38.023,22.326,36.176,22.326z"/>
+            </svg>
+         {{/link-to-animated }}
       </div>
       <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li>{{#link-to-animated "index" animations="main:slideLeft"}}Home{{/link-to-animated }}</li>
-          <li>{{#link-to-animated "entries" animations="main:slideLeft"}}Entries{{/link-to-animated}}</li>
-          {{#if session.isAuthenticated}}
-            {{#if session.currentUser.profile}}
-                <li>{{#link-to-animated "profile" session.currentUser.profile animations="main:slideLeft"}}Profile{{/link-to-animated}}</li>
-              {{else}}
-                <li>{{#link-to-animated "new_profile" animations="main:slideLeft"}}Create Profile{{/link-to-animated}}</li>
-              {{/if}}
-          {{/if}}
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
+         <ul class="nav navbar-nav">
+            <li></li>
+            <li>{{#link-to-animated "entries" animations="main:slideLeft"}}Publicaciones{{/link-to-animated}}</li>
             {{#if session.isAuthenticated}}
-              <li><a href="#" {{action "invalidateSession"}}>Logout</a></li>
-              
-            {{else}}
-              <li>{{#link-to-animated "login" animations="main:slideLeft"}}Sign In{{/link-to-animated}}</li>
-              <li>{{#link-to-animated "signup" animations="main:slideLeft"}}Create Account{{/link-to-animated}}</li>
+               {{#if session.currentUser.profile}}
+                  <li>{{#link-to-animated "profile" session.currentUser.profile animations="main:slideLeft"}}Perfil{{/link-to-animated}}</li>
+               {{else}}
+                  <li>{{#link-to-animated "new_profile" animations="main:slideLeft"}}Crear perfil{{/link-to-animated}}</li>
+               {{/if}}
             {{/if}}
-        </ul>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+            {{#if session.isAuthenticated}}
+               <li>
+               {{#link-to-animated "new_entry" animations="main:slideLeft" class="btn btn-xs btn-default"}}
+                  <i class="fa fa-plus"></i> Publicar
+               {{/link-to-animated}}
+               </li>
+               <li><a href="#" {{action "invalidateSession"}}>Logout</a></li>
+            {{else}}
+               <li>{{#link-to-animated "login" animations="main:slideLeft"}}Ingresar{{/link-to-animated}}</li>
+               <li>{{#link-to-animated "signup" animations="main:slideLeft"}}Crear cuenta{{/link-to-animated}}</li>
+            {{/if}}
+         </ul>
       </div>
-    </div>
-  </div>
-  {{animated-outlet name="main"}}
+   </header>
+   {{animated-outlet name="main"}}
 </div>

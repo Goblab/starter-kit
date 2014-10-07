@@ -1,5 +1,5 @@
 // Typography
-$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: "Lato", sans-serif !default;
 
 // Brand colors
 $brand-primary: #4f8edd;
@@ -38,6 +38,8 @@ $input-border-focus: #2598f9;
 @import "lib/bootstrap/bootstrap";
 @import "lib/font-awesome/font-awesome";
 @import "lib/bootstrap-social/bootstrap-social";
+
+
 
 html, body {
   height: 100%;
@@ -79,12 +81,11 @@ top: 80px;
 }
 
 .navbar-brand {
-  background-image: url(http://www.joyent.com/content/07-blog/722-joyent-to-sponsor-and-present-at-mongosv-2012/mongodb-leaf.png);
+  /*background-image: url(http://www.joyent.com/content/07-blog/722-joyent-to-sponsor-and-present-at-mongosv-2012/mongodb-leaf.png);*/
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: left center;
-  padding-left: 40px;
-  margin-left: 15px;
+ 
 }
 
 
@@ -94,15 +95,29 @@ top: 80px;
   margin-right: 5px;
 }
 
-
-.ember-script-hide p:first-of-type {
-  display: none;
-}
-
-.view-entries .wysiwyg-preview {
-  border-bottom: 1px solid #ccc;
+.entries-simple {
+  border-bottom: 2px solid #ccc;
   padding: 25px;
+  margin: 55px -15px;
+  background: #f4f4f4;
 }
+
+.entries-simple hr {
+    margin: 20px -25px;
+    border-top: 1px solid #dbdcdb;
+}
+
+
+
+
+.ember-animated-container {
+  top: 0;
+  height: auto !important;
+  width: auto; 
+  margin-top: 75px;
+}
+
+
 
 .fade-out {
   display: none;
