@@ -1,15 +1,19 @@
 <div class='entries-simple row'>
 	<div class="row">
-		<div class="col-md-2">
-			<img src="" alt="">
-		</div>
-		<div class="col-md-10 entrie-simple-summary">
+		<div class="col-xs-8">
+			 <img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded helper-mr10 " width="36">
 			{{#link-to "user_profile" model.author class="h3"}}
 				{{model.author.username}}
 			{{/link-to}}
+		</div>
+		<div class="col-xs-4 entrie-simple-summary text-right">
 			<small>
 				<i class="fa fa-clock-o"></i>{{formattedDate}}
 			</small>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-11 entrie-simple-summary">
 			<p>{{{model.message}}}</p>
 		</div>
 	</div>

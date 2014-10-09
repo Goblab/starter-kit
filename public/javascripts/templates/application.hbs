@@ -1,12 +1,18 @@
 <div id="wrap">
    <header class="navbar-simple navbar-fixed-top" role="navigation">
       <div class="navbar-header">
-         <button type="button" class="navbar-simple-toggle pull-left" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-         </button>
+         <div class="profile">
+            <img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded helper-mr10 " width="36">
+            <span class="h4">Jon Snow</span>
+         </div>
+
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
          {{#link-to-animated "index" animations="main:slideLeft" class="navbar-simple-logo"}}
             <svg version="1.1" x="0px" y="0px" width="38.875px" height="48.819px" viewBox="0 0 38.875 48.819" enable-background="new 0 0 38.875 48.819" xml:space="preserve">
             <path fill="#A4BFDD" d="M36.176,22.326h-0.212H22.107c-1.386,0-2.207,0.937-2.207,3.247v2.218c0,2.311,0.821,3.043,2.207,3.043
@@ -20,8 +26,8 @@
          {{/link-to-animated }}
       </div>
       <div class="navbar-collapse collapse">
+          
          <ul class="nav navbar-nav">
-            <li></li>
             <li>{{#link-to-animated "entries" animations="main:slideLeft"}}Publicaciones{{/link-to-animated}}</li>
             {{#if session.isAuthenticated}}
                {{#if session.currentUser.profile}}

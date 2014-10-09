@@ -1,9 +1,13 @@
 <div class="container">
-  <h3>Edit/Create Entry Template</h3>
-  {{#form-for controller wrapper="personFormWrapper"}}
-	<div class='wysiwyg-container'>
-      {{wysiwyg-editor content=message header="Message"}}
-    </div>  
-   	{{submit}}
-  {{/form-for}}  
+  <div class="row">
+  	<div class="col-sm-6 col-sm-offset-3">
+			<h3>Crear / editar publicación</h3>
+			{{#form-for controller wrapper="personFormWrapper"}}
+				<div class='wysiwyg-container'>
+					{{wysiwyg-editor content=message header="Message"}}
+				</div>  
+				{{submit}}
+			{{/form-for}}  
+		</div>
+	</div>
 </div>

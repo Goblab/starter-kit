@@ -1,27 +1,29 @@
 <section class="container">
-	<div class="page-header row">
-	    <div class="col-md-8">
-		    <h3>
-		    	Perfil de {{user.profile.name}} {{user.profile.last_name}}
-		    	<small></small>
-		    </h3>
-	    </div>
-	    <div class="col-md-4">
-	    	
-			  <strong>{{user.username}}</strong><br>
-			  <a href="mailto:{{unbound user.email}}">
-			  	{{user.email}}
-			  </a><br>
-			  <abbr title="Phone">Edad:</abbr> {{user.profile.age}}
-			
-			
+  	<div class="row">
+	    <div class="col-sm-8 col-sm-offset-2 view-entries">
+			<div class="page-header row">
+			    <div class="col-md-8">
+				    <h3>
+				    	Perfil de {{user.profile.name}} {{user.profile.last_name}}
+				    	<small></small>
+				    </h3>
+			    </div>
+			    <div class="col-md-4">
+				<strong>{{user.username}}</strong><br>
+				<a href="mailto:{{unbound user.email}}">
+					{{user.email}}
+				</a><br>
+				<abbr title="Phone">Edad:</abbr> {{user.profile.age}}
+				</div>
+			</div>
+
+			<div class="row">
+			  {{#collection contentBinding="entries"}}
+			  	{{entry-brief modelBinding=this}}
+			  {{/collection}}
+			</div>
 		</div>
 	</div>
-
-	<div class="container">
-	  {{#collection contentBinding="entries"}}
-	  	{{entry-brief modelBinding=this}}
-	  {{/collection}}
-	</div>
 </section>
+
 

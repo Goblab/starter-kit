@@ -1,34 +1,20 @@
 <div class="container">
 	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2 view-entries">
-			<h3>Perfil</h3>
+		<div class="col-sm-6 col-sm-offset-3 text-center">
 			<div class="row">
-				<div class="col-md-12">
-				  <b>Edad</b> {{ age }}
+				<img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded helper-mr10 " width="150">
+				<h2>
+					{{ name }} <b>{{ last_name }}</b>
+				</h2>
+				{{#if canEdit}}
+					{{#linkTo "edit_profile" model}}Edit{{/linkTo}}
+				{{/if}}
+				<div class="row">
+					<div class="col-md-12">
+					  <b>Edad</b> {{ age }}
+					</div>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-md-12">
-				  <b>Nombre</b> {{ name }}
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-12">
-				  <b>Apellido</b> {{ last_name }}
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-12">
-				  <b>Avatar</b> {{ avatar }}
-				</div>
-			</div>
-
-			{{#if canEdit}}
-				{{#linkTo "edit_profile" model}}Edit{{/linkTo}}
-			{{/if}}
 		</div>
 	</div>
 </div>
