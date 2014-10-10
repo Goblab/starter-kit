@@ -280,6 +280,7 @@ transform: translateY(-21px);
 }
 
 } 
+
 .menu-wrap a {
   color: #fff;
   text-decoration: none;
@@ -490,3 +491,10 @@ transform: translateY(-21px);
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
 }
+
+.entrie-simple-summary iframe {
+  display:block;
+  width: 100% !important;
+  margin: 0 auto;
+}
+

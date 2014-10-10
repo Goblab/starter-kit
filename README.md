@@ -1,3 +1,6 @@
+#IMPORTANT!!!!
+Change Ember tools for Ember Tools extend
+
 Goblab Starter
 ==============================
 
@@ -6,7 +9,7 @@ Goblab Starter
 ## Prerequisites
 - Node.js `http://nodejs.org`
 - MongoDB `brew install mongodb`
-- ember-tools: `sudo npm install -g ember-tools`
+- ember-tools-ext: `sudo npm install -g ember-tools-ext`
 
 ## Usage
 Clone repo and navigate to the directory in terminal. Then to install all the dependencies run:
@@ -18,9 +21,9 @@ To start a web server, run `node app.js`. **Note**: MongoDB must be running or e
 
 Updating *.scss stylesheets will automatically result in generating a proper css file, as long as the Express server is running. This ability is provided by the `node-sass` library.
 
-For Ember source files you will use **ember-tools** to build and watch for file changes. Simply run `ember build` in the project root directory to compile all javascript files into `application.js`. If you want ember-tools to automatically run build command when files change, run `ember build -w`. Simple as that.
+For Ember source files you will use **ember-tools** to build and watch for file changes. Simply run `ember-ext build` in the project root directory to compile all javascript files into `application.js`. If you want ember-tools to automatically run build command when files change, run `ember-ext build -w`. Simple as that.
 
-To recap: Make sure MognoDB is running. Run `node app.js`. Then in a separate terminal tab run `ember build -w`. And you are all set.
+To recap: Make sure MognoDB is running. Run `node app.js`. Then in a separate terminal tab run `ember-ext build -w`. And you are all set.
 
 For generating models, views, controllers, templates, routes please refer to ember-tools [github page](https://github.com/rpflorence/ember-tools).
 

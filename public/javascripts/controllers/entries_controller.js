@@ -7,6 +7,10 @@ var EntriesController = Em.PaginationController.extend({
 	sortProperties: ['createdAt'],
 	sortAscending: false,
 
+	sortFunction: function (dateX, dateY) {
+		return Ember.compare(moment(dateX).unix(), moment(dateY).unix());
+	},
+
 	sockets: {
 		new_entry: function(data) {
 	    	this.get('store').find('entry', data).then(function (model) {

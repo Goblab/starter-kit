@@ -11,22 +11,21 @@ var WysiwygEditorComponent = Ember.Component.extend({
     var _this = this;
     var btnSize = this.get('btnSize');
     var height = this.get('height');
-    this.$('textarea').summernote({
-      height: height,
-      toolbar: [
-        ['style', ['bold', 'italic', 'underline', 'clear']],
-        ['fontsize', ['fontsize']],
+    this.$('.wysiwyg-textarea').summernote({
+      airMode: true,
+      airPopover: [
         ['color', ['color']],
-        ['para', ['ul', 'ol', 'paragraph']],
-        ['height', ['height']],
-        ['insert', ['link']],
-        ['table', ['table']],
-        ['help', ['help']]
-      ]
+        ['style', ['fontname']],
+        ['size', ['fontsize']],
+        ['font', ['bold', 'underline', 'clear']],
+        ['para', ['ul', 'paragraph']],
+        ['insert', ['link', 'picture', 'video']]
+      ]      
     });
 
     var content = this.get('content');
-    this.$('textarea').code(content);
+
+    this.$('.wysiwyg-textarea').code(content);
     this.$('.btn').addClass(btnSize);
   },
   
@@ -39,7 +38,7 @@ var WysiwygEditorComponent = Ember.Component.extend({
   },
 
   doUpdate: function() {
-    var content = this.$('.note-editable').html();
+    var content = this.$('.note-editable').code();
     this.set('content', content);
   }
 });

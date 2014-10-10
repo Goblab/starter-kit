@@ -1,25 +1,17 @@
-<section class="container">
+<section class="container ">
 	<div class="page-header text-center">
     <h1><b>Editar perfil</b></h1>
 	</div>
 	<div class="col-sm-8 col-sm-offset-2">
-		{{#form-for controller wrapper="personFormWrapper"}}
+		{{#form-for controller wrapper="basicFormWrapper"}}
+			{{input age placeholder="Edad" label="Edad" hint="Enter your first name"}}
 			
-				
-				{{input age}}
+			{{input name placeholder="Nombre" label="Nombre"}}
 			
+			{{input last_name placeholder="Apellido" label="Apellido"}}
 			
-				
-				{{input name}}
-			
-			
-				
-				{{input last_name}}
-			
-			
-				
-				{{input avatar}}
-			
+			{{input avatar placeholder="Avatar" label="Avatar"}}
+
 			{{submit class="btn btn-success"}}
 		{{/form-for}}
 	</div>
