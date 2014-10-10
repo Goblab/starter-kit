@@ -19,7 +19,7 @@ var WysiwygEditorComponent = Ember.Component.extend({
         ['size', ['fontsize']],
         ['font', ['bold', 'underline', 'clear']],
         ['para', ['ul', 'paragraph']],
-        ['insert', ['link', 'picture']]
+        ['insert', ['link', 'picture', 'video']]
       ]      
     });
 
