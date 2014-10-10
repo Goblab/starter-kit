@@ -1,7 +1,7 @@
 <div id="wrap">
    <header class="navbar-simple navbar-fixed-top" role="navigation">
       <div class="navbar-header">
-         <div class="profile">
+         <div class="perfil">
             <img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded helper-mr10 " width="36">
             <span class="h4">Jon Snow</span>
          </div>
@@ -40,7 +40,7 @@
          <ul class="nav navbar-nav navbar-right">
             {{#if session.isAuthenticated}}
                <li>
-               {{#link-to-animated "new_entry" animations="main:slideLeft" class="btn btn-xs btn-default"}}
+               {{#link-to-animated "new_entry" animations="main:slideLeft" class="btn btn-xs btn-default btn-round"}}
                   <i class="fa fa-plus"></i> Publicar
                {{/link-to-animated}}
                </li>
@@ -52,5 +52,17 @@
          </ul>
       </div>
    </header>
-   {{animated-outlet name="main"}}
+   <div class="menu-wrap">
+      <nav class="menu">
+         <div class="icon-list">
+            <a href="#"><i class="fa fa-fw fa-star-o"></i><span>Favoritos</span></a>
+            <a href="#"><i class="fa fa-fw fa-bell-o"></i><span>Notificaciones</span></a>
+            <a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Mensajes</span></a>
+            <a href="#"><i class="fa fa-fw fa-comment-o"></i><span>Comentarios</span></a>
+            <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i><span>Estadisticas</span></a>
+         </div>
+      </nav>
+      <button class="close-button" id="close-button">Cerrar</button>
+   </div>
+   {{animated-outlet name="main" class="content-wrap"}}
 </div>
