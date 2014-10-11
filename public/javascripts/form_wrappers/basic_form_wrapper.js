@@ -9,9 +9,9 @@ Ember.EasyForm.Config.registerWrapper('basicFormWrapper', {
   formClass: 'basic-form',
   fieldErrorClass: 'basic-error',
   errorClass: 'basic-help-inline',
-  hintClass: 'help-block',
+  hintClass: 'basic-help-block',
   labelClass: 'basic-control-label',
-  inputClass: 'form-group'  
+  inputClass: 'basic-form-group'  
 });
 
 

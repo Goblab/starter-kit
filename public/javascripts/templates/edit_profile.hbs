@@ -1,18 +1,38 @@
 <section class="container ">
 	<div class="page-header text-center">
-    <h1><b>Editar perfil</b></h1>
+    	<h1><b>Editar perfil</b></h1>
 	</div>
-	<div class="col-sm-8 col-sm-offset-2">
+	<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
 		{{#form-for controller wrapper="basicFormWrapper"}}
-			{{input age placeholder="Edad" label="Edad" hint="Enter your first name"}}
+			<div class="row">
+				<div class="col-xs-12">
+					{{input age placeholder="Edad" label="Edad"}}
+				</div>
+			</div>
 			
-			{{input name placeholder="Nombre" label="Nombre"}}
+			<div class="row">
+				<div class="col-xs-12">
+					{{input name placeholder="Nombre" label="Nombre"}}
+				</div>
+			</div>
 			
-			{{input last_name placeholder="Apellido" label="Apellido"}}
+			<div class="row">
+				<div class="col-xs-12">
+					{{input last_name placeholder="Apellido" label="Apellido"}}
+				</div>
+			</div>
 			
-			{{input avatar placeholder="Avatar" label="Avatar"}}
+			<div class="row">
+				<div class="col-xs-12">
+					{{input avatar placeholder="Avatar" label="Avatar"}}
+				</div>
+			</div>
 
-			{{submit class="btn btn-success"}}
+			<div class="row">
+				<div class="col-xs-12">
+					{{submit class="btn btn-success pull-right"}}
+				</div>
+			</div>
 		{{/form-for}}
 	</div>
 </section>

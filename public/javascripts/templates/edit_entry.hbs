@@ -1,13 +1,21 @@
-<div class="container">
-  <div class="row">
-  	<div class="col-sm-6 col-sm-offset-3">
-			<h3>Crear / editar publicación</h3>
-			{{#form-for controller wrapper="goblabFormWrapper"}}
-				<div class='wysiwyg-container'>
-					{{wysiwyg-editor content=message header="Message"}}
-				</div>  
-				{{submit}}
-			{{/form-for}}  
-		</div>
+<section class="container ">
+	<div class="page-header text-center">
+    	<h1><b>Crear / editar publicación</b></h1>
 	</div>
-</div>
+	<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+		{{#form-for controller wrapper="goblabFormWrapper"}}
+			<div class="row">
+				<div class="col-xs-12">
+					<div class='wysiwyg-container'>
+						{{wysiwyg-editor content=message header="Message"}}
+					</div>  
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-2">
+					{{submit class="btn btn-block btn-success pull-right"}}
+				</div>
+			</div>
+		{{/form-for}}  
+	</div>
+</section>
