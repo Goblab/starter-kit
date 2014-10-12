@@ -1,13 +1,13 @@
 <div class='entries-simple row'>
 	<div class="row">
 		<div class="col-xs-8">
-			 <img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded helper-mr10 " width="36">
+			 <img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded mar-lv2 mar-l0 mar-tb0" width="36">
 			{{#link-to "user_profile" model.author class="h3"}}
 				{{model.author.username}}
 			{{/link-to}}
 		</div>
-		<div class="col-xs-4 entrie-simple-summary text-right">
-			<small>
+		<div class="col-xs-4 text-right">
+			<small class="mar-lv1 mar-lr0 mar-b0 pull-right">
 				<i class="fa fa-clock-o"></i>{{formattedDate}}
 			</small>
 		</div>
@@ -19,15 +19,10 @@
 	</div>
 	<hr>
 	<div class="row">
-		<div class="col-md-10 col-md-offset-2">
-			<ul class="nav nav-pills entries-simple-btn">
-			  <li>
-			  	{{#link-to-animated "entry" model class="pull-left" animations="main:slideRight"}}
-			  		<i class="fa fa-comments"></i> Ver completo
-			  	{{/link-to-animated}}
-			  </li>
-			  <li class="disabled">{{#link-to "entry" model class="pull-left"}}<i class="fa fa-star"></i> Favoritos{{/link-to}}</li>
-			</ul>
+		<div class="col-md-12 text-center">
+		  	{{#link-to-animated "entry" model class="btn btn-primary" animations="main:slideRight"}}
+		  		<i class="fa fa-comments"></i> Ver completo
+		  	{{/link-to-animated}}
 		</div>
 	</div>
 </div>

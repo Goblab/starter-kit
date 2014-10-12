@@ -1,29 +1,29 @@
-<section class="container">
-  	<div class="row">
-	    <div class="col-sm-8 col-sm-offset-2 view-entries">
-			<div class="page-header row">
-			    <div class="col-md-8">
-				    <h3>
-				    	Perfil de {{user.profile.name}} {{user.profile.last_name}}
-				    	<small></small>
-				    </h3>
-			    </div>
-			    <div class="col-md-4">
-				<strong>{{user.username}}</strong><br>
-				<a href="mailto:{{unbound user.email}}">
-					{{user.email}}
-				</a><br>
-				<abbr title="Phone">Edad:</abbr> {{user.profile.age}}
+<div class="container">
+	<div class="row">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+			<div class="row text-center">
+				<img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded helper-mr10 " width="150">
+				<h2>
+					{{user.profile.name}} <b>{{user.profile.last_name}}</b><br/>
+					<small><i>{{user.username}}</i></small>
+				</h2>
+
+				<div class="row">
+					<div class="col-md-12">
+						<b>Edad</b> {{user.profile.age}}<br/>
+						<a href="mailto:{{unbound user.email}}">
+							{{user.email}}
+						</a>
+					</div>
 				</div>
 			</div>
-
 			<div class="row">
-			  {{#collection contentBinding="entries"}}
-			  	{{entry-brief modelBinding=this}}
-			  {{/collection}}
+				{{#collection contentBinding="entries"}}
+					{{entry-brief modelBinding=this}}
+				{{/collection}}
 			</div>
 		</div>
 	</div>
-</section>
+</div>
 
 

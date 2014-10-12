@@ -1,37 +1,38 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-8 col-sm-offset-2 view-entries">
+    <div class="col-sm-6 col-sm-offset-3 view-entries">
       <div class='entries-simple row'>
-        <div class="row">
-          <div class="col-md-2">
-            <img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded" width="36">
+          <div class="row">
+            <div class="col-xs-8">
+               <img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded mar-lv2 mar-l0 mar-tb0" width="36">
+              {{#link-to "user_profile" model.author class="h3"}}
+                {{model.author.username}}
+              {{/link-to}}
+            </div>
           </div>
-          <div class="col-md-10 entrie-simple-summary">
-            {{#link-to "user_profile" model.author class="h3"}}
-              {{model.author.username}}
-            {{/link-to}}
-            <p>{{{message}}}</p>
+          <div class="row">
+            <div class="col-md-11 entrie-simple-summary">
+              <p>{{{model.message}}}</p>
+            </div>
           </div>
-        </div>
         <hr>
         <div class="row">
-          <div class="col-md-10 col-md-offset-2">
-            <ul class="nav nav-pills entries-simple-btn">
-              <li>{{#link-to-animated "entries" classNames="btn btn-default" animations="main:slideLeft"}}
-                <i class="fa fa-long-arrow-left"></i> Todas las publicaciones{{/link-to-animated}}
-              </li>
+          <div class="col-md-10 col-md-offset-2 ">
+              {{#link-to-animated "entries" classNames="btn btn-primary" animations="main:slideLeft"}}
+                <i class="fa fa-arrow-left"></i>
+                Todas las publicaciones
+              {{/link-to-animated}}
+
               {{#if session.isAuthenticated}}
                 {{#if canEdit}}
-                  <li>
-                    {{#link-to-animated "edit_entry" model classNames="btn btn-default" animations="main:slideLeft"}}
-                    <i class="fa fa-pencil"></i> Editar{{/link-to-animated}}
-                  </li>
-                  <li>
-                    <a href="#" class="btn btn-default" {{action "destroy"}}><i class="fa fa-trash-o"></i> Eliminar</a>
-                  </li>
+                    {{#link-to-animated "edit_entry" model classNames="btn btn-success" animations="main:slideLeft"}}
+                      <i class="fa fa-pencil"></i> Editar
+                    {{/link-to-animated}}
+                    <a href="#" class="btn btn-danger" {{action "destroy"}}>
+                      <i class="fa fa-trash-o"></i> Eliminar
+                    </a>
                 {{/if}}
               {{/if}}
-            </ul>
           </div>
         </div>
       </div>
