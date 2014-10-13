@@ -1,5 +1,6 @@
 <div id="wrap">
    <header class="navbar-simple navbar-fixed-top" role="navigation">
+      <button class="close-button" id="close-button" {{action 'showMenu' target=view}}>Cerrar</button>
       <div class="navbar-header">
          {{#if session.isAuthenticated}}
          <div class="perfil">
@@ -61,16 +62,8 @@
       </div>
    </header>
    <div class="menu-wrap">
-      <nav class="menu">
-         <div class="icon-list">
-            <a href="#"><i class="fa fa-fw fa-star-o"></i><span>Favoritos</span></a>
-            <a href="#"><i class="fa fa-fw fa-bell-o"></i><span>Notificaciones</span></a>
-            <a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Mensajes</span></a>
-            <a href="#"><i class="fa fa-fw fa-comment-o"></i><span>Comentarios</span></a>
-            <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i><span>Estadisticas</span></a>
-         </div>
-      </nav>
-      <button class="close-button" id="close-button">Cerrar</button>
+      {{outlet menu name="menu"}}
+      <button class="close-button" id="close-button" {{action 'hideMenu' target=view}}>Cerrar</button>
    </div>
    {{animated-outlet name="main" class="content-wrap"}}
 </div>

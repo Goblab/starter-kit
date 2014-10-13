@@ -1,4 +1,9 @@
 ApplicationRoute = Ember.Route.extend(Ember.SimpleAuth.ApplicationRouteMixin, {
+  renderTemplate: function(controller, model) {
+    this._super(controller, model);
+    this.render('menu', {outlet: 'menu', into: 'application', controller: controller, model: model});
+  },
+
   goBack: function(invoice) {
     Ember.AnimatedContainerView.enqueueAnimations({main: 'slideRight'});
     history.go(-1);
