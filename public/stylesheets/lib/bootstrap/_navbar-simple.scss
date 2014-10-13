@@ -45,6 +45,18 @@
 
 	}
 
+
+
+	@media (max-width: 767px) {
+	.hidden-xs {
+	  display: none !important;
+	 }
+	}
+
+		.hidden-xs {
+		display: inline !important;
+	}
+
 		// Alternate buttons
 	// --------------------------------------------------
 

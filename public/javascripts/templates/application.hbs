@@ -5,9 +5,11 @@
          <div class="perfil">
             {{#link-to-animated "profile" session.currentUser.profile animations="main:slideLeft" class="nodecoration"}}
             <img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded mar-lv2 mar-l0 mar-tb0" width="36">
-            <span class="h4">
-               {{session.currentUser.username}}
-            </span>
+            <div class="hidden-xs">
+               <span class="h4">
+                  {{session.currentUser.username}}
+               </span>
+            </div>
              {{/link-to-animated}}
          </div>
          {{/if}}
