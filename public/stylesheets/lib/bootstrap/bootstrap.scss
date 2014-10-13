@@ -1,5 +1,5 @@
-// Core variables and mixins
-
+// Bootstrap adaptado Goblab Starter
+// ---------------------------------
 
 // Utilities
 // Estos estilos define las clases que afectan globalmente al diseño.
@@ -17,7 +17,6 @@
 @import "utilities/offcanvas";
 @import "utilities/loading-bubles";
 
-
 // Atoms
 // Son los bloques basicos para crear.
 @import "atoms/type";
@@ -28,7 +27,6 @@
 @import "atoms/labels";
 @import "atoms/badges";
 @import "atoms/close";
-
 
 // Molecules
 // Son grupos de atomos combinados para crear la unidad minima de un componente.
@@ -42,7 +40,6 @@
 @import "molecules/list-group";
 @import "molecules/wells";
 @import "molecules/tooltip";
-
 
 // Organism
 // Grupo de moleculas que crean una sección distintiva en la interface.
@@ -59,7 +56,6 @@
 @import "organism/popovers";
 @import "organism/carousel";
 @import "organism/entries-simple";
-
 
 // Templates
 // Proveer contexto mediante ciertas reglas al grupo abstracto de moleculas y organismos.
