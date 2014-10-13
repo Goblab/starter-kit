@@ -1,0 +1,30 @@
+//
+// Entradas simples
+// --------------------------------------------------
+
+.entrie-simple-summary iframe {
+   display:block;
+   width: 100% !important;
+   margin: 0 auto;
+}
+
+.entrie-simple-summary p {
+   margin-bottom: 0px;
+   padding: 0.75em 0px;
+   color: rgb(65, 74, 81);
+   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+   font-size: 18px;
+   line-height: 29.439998626709px;
+}
+
+.entries-simple {
+   border-bottom: 2px solid #ccc;
+   padding: 25px;
+   margin: 55px -15px;
+   background: #f4f4f4;
+}
+
+.entries-simple hr {
+   margin: 20px -25px;
+   border-top: 1px solid #dbdcdb;
+}

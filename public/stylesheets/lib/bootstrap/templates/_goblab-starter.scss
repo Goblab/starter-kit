@@ -1,0 +1,76 @@
+//
+// Templates Goblab Starter
+// --------------------------------------------------
+
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  padding-top: 60px;
+}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -120px;
+  /* Pad bottom by footer height */
+  // I am using 140px instead of 120px to give some room between #wrap and #footer
+  // Otherwise footer will be almost touching your page content
+  padding: 0 0 140px;
+}
+
+.inner-wrap {
+  top: 80px;
+}
+
+#footer {
+  height: 120px;
+  padding-top: 20px;
+  background-color: $navbar-default-bg;
+  border-top: 1px solid $navbar-default-border;
+}
+
+.form-control:focus {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+.navbar-brand {
+  /*background-image: url(http://www.joyent.com/content/07-blog/722-joyent-to-sponsor-and-present-at-mongosv-2012/mongodb-leaf.png);*/
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: left center;
+ 
+}
+
+.perfil {
+  position: relative;
+  top: 3px;
+  margin: 0 15px 0 0;
+  float: left;
+}
+
+
+[class^="fa-"],
+[class*="fa-"] {
+  margin-right: 5px;
+}
+
+
+
+.ember-animated-container {
+  top: 0;
+  height: auto !important;
+  width: auto; 
+  margin-top: 105px;
+}
+
+.fade-out {
+  display: none;
+}
+
+

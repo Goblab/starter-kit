@@ -1,51 +1,66 @@
 // Core variables and mixins
-@import "variables";
-@import "mixins";
 
-// Reset
-@import "normalize";
-@import "print";
 
-// Core CSS
-@import "scaffolding";
-@import "type";
-@import "code";
-@import "grid";
-@import "tables";
-@import "forms";
-@import "buttons";
+// Utilities
+// Estos estilos define las clases que afectan globalmente al diseño.
+@import "utilities/variables";
+@import "utilities/mixins";
+@import "utilities/normalize";
+@import "utilities/print";
+@import "utilities/scaffolding";
+@import "utilities/grid";
+@import "utilities/component-animations";
+@import "utilities/glyphicons";
+@import "utilities/helpers";
+@import "utilities/utilities";
+@import "utilities/responsive-utilities";
+@import "utilities/offcanvas";
+@import "utilities/loading-bubles";
 
-// Components
-@import "component-animations";
-@import "glyphicons";
-@import "dropdowns";
-@import "button-groups";
-@import "input-groups";
-@import "navs";
-@import "navbar";
-@import "navbar-simple";
-@import "breadcrumbs";
-@import "pagination";
-@import "pager";
-@import "labels";
-@import "badges";
-@import "jumbotron";
-@import "thumbnails";
-@import "alerts";
-@import "progress-bars";
-@import "media";
-@import "list-group";
-@import "panels";
-@import "wells";
-@import "close";
-@import "basic-form";
 
-// Components w/ JavaScript
-@import "modals";
-@import "tooltip";
-@import "popovers";
-@import "carousel";
+// Atoms
+// Son los bloques basicos para crear.
+@import "atoms/type";
+@import "atoms/code";
+@import "atoms/tables";
+@import "atoms/forms";
+@import "atoms/buttons";
+@import "atoms/labels";
+@import "atoms/badges";
+@import "atoms/close";
 
-// Utility classes
-@import "utilities";
-@import "responsive-utilities";
+
+// Molecules
+// Son grupos de atomos combinados para crear la unidad minima de un componente.
+@import "molecules/dropdowns";
+@import "molecules/button-groups";
+@import "molecules/input-groups";
+@import "molecules/navs";
+@import "molecules/navbar";
+@import "molecules/alerts";
+@import "molecules/media";
+@import "molecules/list-group";
+@import "molecules/wells";
+@import "molecules/tooltip";
+
+
+// Organism
+// Grupo de moleculas que crean una sección distintiva en la interface.
+@import "organism/breadcrumbs";
+@import "organism/navbar-simple";
+@import "organism/pagination";
+@import "organism/pager";
+@import "organism/jumbotron";
+@import "organism/thumbnails";
+@import "organism/progress-bars";
+@import "organism/panels";
+@import "organism/basic-form";
+@import "organism/modals";
+@import "organism/popovers";
+@import "organism/carousel";
+@import "organism/entries-simple";
+
+
+// Templates
+// Proveer contexto mediante ciertas reglas al grupo abstracto de moleculas y organismos.
+@import "templates/goblab-starter";
