@@ -1,9 +1,38 @@
 <div class="icon-list">
-	<a href="#"><i class="fa fa-fw fa-star-o"></i><span>Favoritos</span></a>
-	<a href="#"><i class="fa fa-fw fa-bell-o"></i><span>Notificaciones</span></a>
-	<a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Mensajes</span></a>
-	<a href="#"><i class="fa fa-fw fa-comment-o"></i><span>Comentarios</span></a>
-	<a href="#"><i class="fa fa-fw fa-bar-chart-o"></i><span>Estadisticas</span></a>
+	{{#link-to-animated "entries" animations="main:slideLeft"}}
+		<i class="fa fa-quote-right"></i>
+		Publicaciones
+	{{/link-to-animated}}
+
+	{{#if session.isAuthenticated}}
+		{{#if session.currentUser.profile}}
+			{{#link-to-animated "new_entry" animations="main:slideLeft"}}
+				<i class="fa fa-fw fa-plus"></i>
+				Publicar
+			{{/link-to-animated}}
+			<a href="#" {{action "invalidateSession"}}>
+				<i class="fa fa-fw fa-power-off"></i>
+				Logout
+			</a>
+		{{else}}
+			{{#link-to-animated "new_profile" animations="main:slideLeft"}}
+				<i class="fa fa-fw fa-user"></i>
+				Crear perfil
+			{{/link-to-animated}}
+		{{/if}}
+	{{else}}
+
+		{{#link-to-animated "login" animations="main:slideLeft"}}
+			<i class="fa fa-fw fa-unlock-alt"></i>
+			Ingresar
+		{{/link-to-animated}}
+
+		{{#link-to-animated "signup" animations="main:slideLeft"}}
+			<i class="fa fa-fw fa-rocket"></i>
+			Crear cuenta
+		{{/link-to-animated}}
+
+	{{/if}}
 </div>
 
 

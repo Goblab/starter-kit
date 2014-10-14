@@ -9,7 +9,7 @@
       </div>
     {{/if}}
 
-    <form {{action "signup" on="submit"}}>
+    <form {{action "signup" on="submit"}} class="mar-lv3 mar-t0 mar-lr0">
       <div class="form-group">
         <label for="username" class="control-label">Usuario</label>
         {{input type="text" class="form-control" value=username autofocus="autofocus"}}
@@ -27,7 +27,9 @@
         <label for="confirmPassword" class="control-label">Confirmar contraseña</label>
         {{input type="password" class="form-control" value=confirmPassword}}
       </div>
-      <button type="submit" class="btn btn-success pull-right" {{bind-attr disabled="isProcessing"}}><i class="fa fa-rocket"></i> Crear cuenta</button>
+      <button type="submit" class="btn btn-success btn-round" {{bind-attr disabled="isProcessing"}}>
+        <i class="fa fa-rocket"></i> Crear cuenta
+      </button>
     </form>
   </div>
 </div>
