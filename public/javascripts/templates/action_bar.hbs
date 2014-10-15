@@ -1,0 +1,11 @@
+{{#each ac in actionsList}}
+		{{#if ac.private}}
+			{{#if session.isAuthenticated}}
+				<a {{action ac.action target=ac.target class="btn btn-xs {{unbound ac.class}} btn-round"}}>{{ac.name}}</a>			 
+			{{/if}}
+		{{else}}
+			<a {{action ac.action target=ac.target class="btn btn-xs {{unbound ac.class}} btn-round"}}>{{ac.name}}</a>
+		{{/if}}
+{{/each}}
+
+
