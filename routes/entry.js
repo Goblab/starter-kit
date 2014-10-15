@@ -83,7 +83,7 @@ module.exports = function(app) {
     entry.save(function (err) {
       if (!err) {
         console.log("created entry");
-        return res.json(201, entry.toObject());
+        return res.json(201, {entry: entry.toObject()});
       } else {
         return res.json(500, err);
       }
@@ -119,7 +119,7 @@ module.exports = function(app) {
         } else {
          return res.json(500, err);
         }
-        return res.json(entry);
+        return res.json({entry: entry});
       });
     });
 
@@ -144,8 +144,8 @@ module.exports = function(app) {
 
 
   app.get('/api/entries', api.entries);
-  app.get('/api/entry/:id', api.entry);
-  app.post('/api/entry', api.addEntry);
-  app.put('/api/entry/:id', api.editEntry);
-  app.delete('/api/entry/:id', api.deleteEntry);
+  app.get('/api/entries/:id', api.entry);
+  app.post('/api/entries', api.addEntry);
+  app.put('/api/entries/:id', api.editEntry);
+  app.delete('/api/entries/:id', api.deleteEntry);
 };

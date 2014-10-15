@@ -11,8 +11,6 @@ var path = require('path');
 var sass = require('node-sass');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var crypto = require('crypto');
-var bcrypt = require('bcrypt');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
@@ -23,9 +21,26 @@ var errorhandler = require('errorhandler');
 
 var fs = require('fs');
 
+
+//var app = express();
+var app = module.exports = exports.app = express();
+
+app.locals.siteName = "Goblab starter";
+
+// Connect to database
+var db = require('./config/db');
+
+// Bootstrap models
+var modelsPath = path.join(__dirname, 'models');
+fs.readdirSync(modelsPath).forEach(function (file) {
+  require(modelsPath + '/' + file);
+});
+
 /**
  * Passport setup.
  */
+
+var User = mongoose.models.User;
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
@@ -49,31 +64,9 @@ passport.use(new LocalStrategy(function(username, password, done) {
   });
 }));
 
-//var app = express();
-var app = module.exports = exports.app = express();
-
-app.locals.siteName = "Goblab starter";
-
-// Connect to database
-var db = require('./config/db');
-
-// Bootstrap models
-var modelsPath = path.join(__dirname, 'models');
-fs.readdirSync(modelsPath).forEach(function (file) {
-  require(modelsPath + '/' + file);
-});
-
-// Bootstrap routes/api
-var routesPath = path.join(__dirname, 'routes');
-fs.readdirSync(routesPath).forEach(function(file) {
-  require(routesPath + '/' + file)(app);
-});
-
 
 app.set('port', process.env.PORT || 3000);
 
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
@@ -90,6 +83,11 @@ app.use(function(err, req, res, next){
 app.use(sass.middleware({ src: path.join(__dirname, 'public') }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Bootstrap routes/api
+var routesPath = path.join(__dirname, 'routes');
+fs.readdirSync(routesPath).forEach(function(file) {
+  require(routesPath + '/' + file)(app);
+});
 
 /**
  * POST /token

@@ -42,7 +42,7 @@ module.exports = function(app) {
     profile.save(function (err) {
       if (!err) {
         console.log("created profile");
-        return res.json(201, profile.toObject());
+        return res.json(201, {profile: profile.toObject()});
       } else {
         return res.json(500, err);
       }
@@ -86,7 +86,7 @@ module.exports = function(app) {
         } else {
          return res.json(500, err);
         }
-        return res.json(profile);
+        return res.json({profile: profile});
       });
     });
 
@@ -111,8 +111,8 @@ module.exports = function(app) {
 
 
   app.get('/api/profiles', api.profiles);
-  app.get('/api/profile/:id', api.profile);
-  app.post('/api/profile', api.addProfile);
-  app.put('/api/profile/:id', api.editProfile);
-  app.delete('/api/profile/:id', api.deleteProfile);
+  app.get('/api/profiles/:id', api.profile);
+  app.post('/api/profiles', api.addProfile);
+  app.put('/api/profiles/:id', api.editProfile);
+  app.delete('/api/profiles/:id', api.deleteProfile);
 };

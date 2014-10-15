@@ -1,4 +1,6 @@
 'use strict';
+var crypto = require('crypto');
+var bcrypt = require('bcrypt');
 
 var mongoose = require('mongoose'),
 		Schema = mongoose.Schema,

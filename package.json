@@ -26,7 +26,6 @@
   "repository": {
     "type": "git",
     "url": "git://bitbucket.org/mbiondo/goblab-starter.git"
-    
   },
   "scripts": {
     "start": "node app.js",
@@ -38,7 +37,6 @@
     "method-override": "latest",
     "body-parser": "latest",
     "errorhandler": "latest",
-
     "express": "~3.4.7",
     "socket.io": "*",
     "mongoose": "~3.8.4",
@@ -51,9 +49,9 @@
     "mysql": "~2.0.1"
   },
   "devDependencies": {
-    "grunt": "latest",
+    "grunt": "~0.4.5",
     "grunt-mocha-test": "latest",
-    "bower": "latest",    
+    "bower": "latest",
     "supertest": "latest",
     "mocha": "latest",
     "grunt-open": "^0.2.3",

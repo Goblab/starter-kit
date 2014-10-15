@@ -1,7 +1,9 @@
 module.exports = function(app) {
   // Module dependencies.
+
   var mongoose = require('mongoose'),
       User = mongoose.models.User,
+      Profile = mongoose.models.Profile,
       api = {};
 
   // ALL
@@ -17,6 +19,7 @@ module.exports = function(app) {
     });
   };
   */
+
   api.users = function (req, res, next) {
     var filter =  {};
     for ( var k in req.query ) {
@@ -144,11 +147,43 @@ module.exports = function(app) {
     });
 
   };
+  // POST
+  api.addSignup = function (req, res) {
+    console.log(req.is('json'));
+    if (!req.body.username) {
+      return res.send(400, 'Username cannot be blank.');
+    }
 
+    if (!req.body.email) {
+      return res.send(400, 'Email cannot be blank.');
+    }
+
+    if (!req.body.password) {
+      return res.send(400, 'Password cannot be blank.');
+    }
+
+    if (req.body.password !== req.body.confirmPassword) {
+      return res.send(400, 'Passwords do not match.');
+    }
+
+    var user = new User({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password
+    });
+
+    user.save(function(err) {
+      if (err) return res.send(500, err.message);
+      res.send(200);
+    });
+  };
+
+
+  app.post('/signup', api.addSignup);
 
   app.get('/api/users', api.users);
-  app.get('/api/user/:id', api.user);
-  app.post('/api/user', api.addUser);
-  app.put('/api/user/:id', api.editUser);
-  app.delete('/api/user/:id', api.deleteUser);
+  app.get('/api/users/:id', api.user);
+  app.post('/api/users', api.addUser);
+  app.put('/api/users/:id', api.editUser);
+  app.delete('/api/users/:id', api.deleteUser);
 };
