@@ -62,8 +62,8 @@ module.exports = function(app) {
         profile["name"] = req.body.profile["name"];
       }  
     
-      if(typeof req.body.profile["lastName"] != 'undefined'){
-        profile["lastName"] = req.body.profile["lastName"];
+      if(typeof req.body.profile["last_name"] != 'undefined'){
+        profile["last_name"] = req.body.profile["last_name"];
       }  
     
       if(typeof req.body.profile["age"] != 'undefined'){
