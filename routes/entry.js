@@ -115,7 +115,7 @@ module.exports = function(app) {
       return entry.save(function (err) {
         if (!err) {
           console.log("updated entry");
-          return res.json(200, entry.toObject());        
+          return res.json(200, {entry: entry.toObject()});        
         } else {
          return res.json(500, err);
         }

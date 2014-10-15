@@ -57,10 +57,13 @@ module.exports = function(app) {
       Profile.findOne({user: req.params.id}, function(err, profile) {
         if (err) return next(err);
         var profileId = null;
+        var username = null;
         if (profile)
           profileId = profile.id;
+        if (user)
+          username = user.username;
         res.send({ user: {
-          username: user.username,
+          username: username,
           email: user.email,
           _id: user.id,
           profile: profileId,

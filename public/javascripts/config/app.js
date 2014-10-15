@@ -35,6 +35,18 @@ App.CustomAuthenticator = Ember.SimpleAuth.Authenticators.OAuth2.extend({
   }
 });
 
+Ember.Route.reopen({
+  renderTemplate: function (controller, model) {
+    this._super(controller, model);
+    console.log(controller.get('actionsList'));
+    if (controller.get('actionsList')) {
+      this.render('action_bar', {outlet: 'actionBar', into: 'application'});
+    } else {
+      this.render('action_bar', {outlet: 'actionBar', into: 'application', controller: this.controllerFor('application')});
+    }
+  },
+})
+
 
 Ember.SimpleAuth.AuthenticatedRouteMixin.reopen({
   beforeModel: function(transition) {

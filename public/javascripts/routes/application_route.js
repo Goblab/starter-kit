@@ -11,13 +11,13 @@ ApplicationRoute = Ember.Route.extend(Ember.SimpleAuth.ApplicationRouteMixin, {
 
   actions: {
    	unauthorized: function () {
-		 this.transitionTo('unauthorized');
+		 this.transitionToAnimated('unauthorized', {main: 'slideLeft'});
    	},
 
 	  loading: function(transition, originRoute) {
      var view = this.container.lookup('view:loading').append();
      this.router.one('didTransition', view, 'destroy');
-    }
+    },
   },
 });
 

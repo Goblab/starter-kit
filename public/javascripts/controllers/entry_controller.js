@@ -9,6 +9,7 @@ var EntryController = Ember.ObjectController.extend({
 	    }
 	},
 
+
 	canEdit: function () {
 		if (this.get('session.user_id') == this.get('model.author.id')) {
 			return true;
