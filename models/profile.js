@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 
 var fields = {
 	name: { type: String },
-	lastName: { type: String },
+	last_name: { type: String },
 	age: { type: Number },
 	avatar: { type: String },
   	user: { type: ObjectId, ref: 'userSchema' },
