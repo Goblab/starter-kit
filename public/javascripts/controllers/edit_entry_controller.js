@@ -1,5 +1,21 @@
 var EditEntryController = Ember.ObjectController.extend({
+
+  actionsList: [
+    {
+      name: 'Volver',
+      action: 'back',
+      class: 'btn-defaul',
+      icon: 'fa-share',
+      private: false,
+    }
+  ],
+
   actions: {
+    back: function () {
+      Ember.AnimatedContainerView.enqueueAnimations({main: 'slideRight'});  
+        history.go(-1);
+    },
+
     submit: function() {
       if (this.get('model').get('isValid')) {
           _self = this;

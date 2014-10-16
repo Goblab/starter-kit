@@ -32,9 +32,6 @@
       
       <div class="pull-right mar-lv1 mar-l0">
          {{#if session.isAuthenticated}}
-               {{#link-to-animated "new_entry" animations="main:slideLeft" class="btn btn-xs btn-success btn-round"}}
-                  <i class="fa fa-plus"></i> Publicar
-               {{/link-to-animated}}
          {{else}}
             {{#link-to-animated "login" animations="main:slideLeft" class="btn btn-xs btn-primary btn-round"}}
                <i class="fa fa-fw fa-unlock-alt"></i>

@@ -2,7 +2,7 @@
 var App = Ember.Application.create({
     LOG_TRANSITIONS: true,
     Socket: EmberSockets.extend({
-        host: 'localhost',
+        host: '181.164.86.99',
         port: 5000,
         controllers: ['Entries', 'EditEntry', 'UserProfile'],
         autoConnect: true
@@ -38,7 +38,6 @@ App.CustomAuthenticator = Ember.SimpleAuth.Authenticators.OAuth2.extend({
 Ember.Route.reopen({
   renderTemplate: function (controller, model) {
     this._super(controller, model);
-    console.log(controller.get('actionsList'));
     if (controller.get('actionsList')) {
       this.render('action_bar', {outlet: 'actionBar', into: 'application'});
     } else {

@@ -1,10 +1,10 @@
 {{#each ac in actionsList}}
 		{{#if ac.private}}
 			{{#if session.isAuthenticated}}
-				<a {{action ac.action target=ac.target class="btn btn-xs {{unbound ac.class}} btn-round"}}>{{ac.name}}</a>			 
+				<a {{action ac.action }} class="btn btn-xs {{unbound ac.class}} btn-round"> <i class="fa {{unbound ac.icon}}"></i>{{ac.name}}</a>			 
 			{{/if}}
 		{{else}}
-			<a {{action ac.action target=ac.target class="btn btn-xs {{unbound ac.class}} btn-round"}}>{{ac.name}}</a>
+			<a {{action ac.action }} class="btn btn-xs {{unbound ac.class}} btn-round"><i class="fa {{unbound ac.icon}}"></i>{{ac.name}}</a>
 		{{/if}}
 {{/each}}
 

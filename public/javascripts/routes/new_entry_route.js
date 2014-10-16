@@ -1,5 +1,6 @@
 var NewEntryRoute = Ember.Route.extend(Ember.SimpleAuth.AuthenticatedRouteMixin, {
-  renderTemplate: function() {
+  renderTemplate: function(controller, model) {
+    this._super(controller, model);
     this.render('edit_entry', { controller: 'new_entry' });
   },
 
