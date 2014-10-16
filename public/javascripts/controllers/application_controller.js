@@ -22,6 +22,7 @@ var ApplicationController = Ember.ObjectController.extend({
 		},
 
 		back: function () {
+			console.log(window.history.length);
 			Ember.AnimatedContainerView.enqueueAnimations({main: 'slideRight'});	
     		history.go(-1);
 		},

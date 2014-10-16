@@ -13,7 +13,7 @@ var EditEntryController = Ember.ObjectController.extend({
   actions: {
     back: function () {
       Ember.AnimatedContainerView.enqueueAnimations({main: 'slideRight'});  
-        history.go(-1);
+      history.go(-1);
     },
 
     submit: function() {
