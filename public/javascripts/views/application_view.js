@@ -29,6 +29,15 @@ var ApplicationView = Ember.View.extend({
 			this.hideMenu();
 		}
 	},
+
+	didInsertElement: function () {
+		this._super();
+		document.addEventListener("backbutton", backKeyDown, true); 
+		function backKeyDown() { 
+		     // Call my back key code here.
+		    alert('go back!');
+		}		
+	}
 });
 
 module.exports = ApplicationView;

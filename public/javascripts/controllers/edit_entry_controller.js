@@ -7,6 +7,13 @@ var EditEntryController = Ember.ObjectController.extend({
       class: 'btn-defaul',
       icon: 'fa-share',
       private: false,
+    },
+    {
+      name: 'Guardar',
+      action: 'submit',
+      class: 'btn-success',
+      icon: 'fa-save',
+      private: true,      
     }
   ],
 

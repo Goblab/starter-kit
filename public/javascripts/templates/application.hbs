@@ -31,14 +31,6 @@
       </div>
       
       <div class="pull-right mar-lv1 mar-l0">
-         {{#if session.isAuthenticated}}
-         {{else}}
-            {{#link-to-animated "login" animations="main:slideLeft" class="btn btn-xs btn-primary btn-round"}}
-               <i class="fa fa-fw fa-unlock-alt"></i>
-               Ingresar
-            {{/link-to-animated}}
-         {{/if}}
-
          {{outlet actionBar name="actionBar"}}
       </div>
       
