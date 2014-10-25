@@ -28,37 +28,113 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h1>
+<a name="important" class="anchor" href="#important"><span class="octicon octicon-link"></span></a>IMPORTANT!!!!</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Change Ember tools for Ember Tools extend</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<h1>
+<a name="goblab-starter" class="anchor" href="#goblab-starter"><span class="octicon octicon-link"></span></a>Goblab Starter</h1>
+
+<p><strong>Versions:</strong> Ember 1.7, 1.0.0-beta.5+canary.b5d02af1, Handlebars 1.1.2, jQuery 2.0.3</p>
+
+<h2>
+<a name="prerequisites" class="anchor" href="#prerequisites"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
+
+<ul>
+<li>Node.js <code>http://nodejs.org</code>
+</li>
+<li>MongoDB <code>brew install mongodb</code>
+</li>
+<li>ember-tools-ext: <code>sudo npm install -g ember-tools-ext</code>
+</li>
+</ul>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Clone repo and navigate to the directory in terminal. Then to install all the dependencies run:</p>
+
+<pre><code>npm install
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>To start a web server, run <code>node app.js</code>. <strong>Note</strong>: MongoDB must be running or else the server won't start. Then visit <code>http://localhost:3000</code>. There are no server-side views, thus you will not see <code>res.render</code> anywhere in the code. The <code>index.html</code> is loaded implicitly from the <code>/public</code> folder. And <code>index.html</code> in turn loads the entire Ember application.</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<p>Updating *.scss stylesheets will automatically result in generating a proper css file, as long as the Express server is running. This ability is provided by the <code>node-sass</code> library.</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>For Ember source files you will use <strong>ember-tools</strong> to build and watch for file changes. Simply run <code>ember-ext build</code> in the project root directory to compile all javascript files into <code>application.js</code>. If you want ember-tools to automatically run build command when files change, run <code>ember-ext build -w</code>. Simple as that.</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<p>To recap: Make sure MognoDB is running. Run <code>node app.js</code>. Then in a separate terminal tab run <code>ember-ext build -w</code>. And you are all set.</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>For generating models, views, controllers, templates, routes please refer to ember-tools <a href="https://github.com/rpflorence/ember-tools">github page</a>.</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<h2>
+<a name="librarys" class="anchor" href="#librarys"><span class="octicon octicon-link"></span></a>Librarys</h2>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<ul>
+<li>Ember EasyForms</li>
+<li>Ember Validations</li>
+<li>Ember SimpleAuth</li>
+<li>Ember ListView</li>
+</ul>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<h2>
+<a name="active-modules" class="anchor" href="#active-modules"><span class="octicon octicon-link"></span></a>Active Modules</h2>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<ul>
+<li>User<br>
+
+<ul>
+<li>Login</li>
+<li>Logout</li>
+<li>Sigin</li>
+<li>Profile
+
+<ul>
+<li>Create</li>
+<li>Edit</li>
+<li>View</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Entry</p>
+
+<ul>
+<li>View</li>
+<li>Edit</li>
+<li>Create</li>
+<li>Delete</li>
+</ul>
+</li>
+<li>
+<p>UserWall:</p>
+
+<ul>
+<li>View user Wall
+
+<ul>
+<li>View profile details</li>
+<li>View user entries</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2>
+<a name="to-do" class="anchor" href="#to-do"><span class="octicon octicon-link"></span></a>TO-DO</h2>
+
+<ul>
+<li>Node app.js refactor</li>
+<li>Node app.js modularize</li>
+<li><del>Node app.js implement Socket.io</del></li>
+<li><del>Implement Ember Socket</del></li>
+<li>Implement Ember DC</li>
+<li>Implement Ember Leaflet (Maps)</li>
+<li>Implement User Profile Avatar (File upload, front end and back end)</li>
+</ul>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/Goblab">Goblab</a></p>
