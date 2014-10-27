@@ -2,7 +2,7 @@ var profile = require('../models/profile');
 
 var NewProfileRoute = Ember.Route.extend(Ember.SimpleAuth.AuthenticatedRouteMixin, {
 
-  renderTemplate: function() {
+  renderTemplate: function(controller, model) {
     this._super(controller, model);
     this.render('edit_profile', {controller: 'new_profile'});
   },
