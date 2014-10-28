@@ -16,8 +16,16 @@ ApplicationRoute = Ember.Route.extend(Ember.SimpleAuth.ApplicationRouteMixin, {
 
 	  loading: function(transition, originRoute) {
      var view = this.container.lookup('view:loading').append();
+     this.set('loadingView', view);
      this.router.one('didTransition', view, 'destroy');
     },
+
+    error: function(error, transition) {
+        var view = this.get('loadingView');
+        view.destroy();
+        // Return true to bubble this event to any parent route.
+        return true;
+      }
   },
 });
 

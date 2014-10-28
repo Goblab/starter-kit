@@ -22,11 +22,28 @@ var ApplicationController = Ember.ObjectController.extend({
 		},
 
 		back: function () {
-			console.log(window.history.length);
 			Ember.AnimatedContainerView.enqueueAnimations({main: 'slideRight'});	
     		history.go(-1);
 		},
 	},
+
+	sockets: {
+		newRecord: function (message) {
+		console.log(message);
+		  var store = this.get('store');
+		  store.find(message.model, message.data).then(function (record) {
+		  	if (record)
+		  		record.reload();
+		  });
+		},
+
+		deleteRecord: function (message) {
+		  var store = this.get('store');
+		  store.find(message.model, message.data).then(function (record) {
+		  	record.unloadRecord();
+		  })
+		},
+	}
 });
 
 module.exports = ApplicationController;

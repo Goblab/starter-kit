@@ -2,9 +2,9 @@
 var App = Ember.Application.create({
     LOG_TRANSITIONS: true,
     Socket: EmberSockets.extend({
-        host: '181.164.86.99',
+        host: 'localhost',
         port: 5000,
-        controllers: ['Entries', 'EditEntry', 'UserProfile'],
+        controllers: ['Application'],
         autoConnect: true
     }),
 });

@@ -1,9 +1,9 @@
-var EntriesController = Em.PaginationController.extend({
+var UserEntriesController =  Em.PaginationController.extend({
 
 	modelInfo: {
     	store: 'entry',
   	},
-
+  	
 	sortProperties: ['createdAt'],
 	sortAscending: false,
 
@@ -12,5 +12,5 @@ var EntriesController = Em.PaginationController.extend({
 	},
 });
 
-module.exports = EntriesController;
+module.exports = UserEntriesController;
 

@@ -4,6 +4,7 @@ module.exports = function(app) {
   var mongoose = require('mongoose'),
       User = mongoose.models.User,
       Profile = mongoose.models.Profile,
+      Entry = mongoose.models.Entry,
       api = {};
 
   // ALL
@@ -54,22 +55,31 @@ module.exports = function(app) {
   api.user = function(req, res, next) {
     User.findById(req.params.id, function(err, user) {
       if (err) return next(err);
-      Profile.findOne({user: req.params.id}, function(err, profile) {
+      Entry.find({author: req.params.id}, function(err, entries) {
         if (err) return next(err);
-        var profileId = null;
-        var username = null;
-        if (profile)
-          profileId = profile.id;
-        if (user)
-          username = user.username;
-        res.send({ user: {
-          username: username,
-          email: user.email,
-          _id: user.id,
-          profile: profileId,
-        }});
-      });    
-      
+        var entriesArr = [];
+        entries.forEach(function (entry) {
+          entriesArr.push(entry.id);
+        });
+        Profile.findOne({user: req.params.id}, function(err, profile) {
+          if (err) return next(err);
+          var profileId = null;
+          var username = null;
+          if (profile)
+            profileId = profile.id;
+          if (user)
+            username = user.username;
+          res.send({ user: {
+            username: username,
+            email: user.email,
+            _id: user.id,
+            profile: profileId,
+            entries: entriesArr
+          }
+        }
+          );
+        });    
+      });
     });
   };
 
