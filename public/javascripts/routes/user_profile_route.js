@@ -9,9 +9,7 @@ var UserProfileRoute = Ember.Route.extend({
 	},
 
 	setupController: function (controller, model) {
-		this.controllerFor('entries').set('model', this.get('store').find('entry', {author: model.get('id')}));
 		controller.set('user', model);
-		controller.set('entries', this.controllerFor('entries'));
 	},
 });
 

@@ -18,29 +18,32 @@ module.exports = function(app) {
 */  
 
   api.entries = function (req, res, next) {
-    var perPage = 3;
+    var perPage = 4;
     var page = Math.max(0, req.param('page'));
     if (!page)
       page = 1;
 
     var filter =  {};
     for ( var k in req.query ) {
-
-        if (k == "message"){
-          filter[k] =  { $regex: req.query[k] };
+        if (k == "ids") {
+          filter['_id'] = { $in: req.query[k]};
         } else {
-          if (k != "page" && k != "per_page")
-            filter[k] = req.query[k];   // probably want to check in the loop
+          if (k == "message"){
+            filter[k] =  { $regex: req.query[k] };
+          } else {
+            if (k != "page" && k != "per_page")
+              filter[k] = req.query[k];   // probably want to check in the loop
+          }
         }
     }
+    console.log(filter);
 
     Entry.find(filter)
-        .limit(perPage)
-        .skip(perPage * (page -1))
         .sort({
             createdAt: 'desc'
         })
         .exec(function(err, entry) {
+            console.log(entry);
             Entry.count().exec(function(err, count) {
                 res.send({
                     entry: entry,
@@ -61,7 +64,11 @@ module.exports = function(app) {
       if (err) {
         res.json(404, err);
       } else {
-        res.json({entry: entry});
+        if (entry) {
+          res.json({entry: entry});
+        } else {
+          res.json(404, err);
+        }
       }
     });
   };

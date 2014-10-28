@@ -10,7 +10,8 @@ var fields = {
 	username: { type: String },
 	email: { type: String },
 	password: { type: String },
-	token: { type: String } 
+	token: { type: String },
+  entries: [{type: ObjectId, ref: 'entrySchema'}],
 };
 
 var userSchema = new Schema(fields);

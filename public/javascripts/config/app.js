@@ -4,7 +4,7 @@ var App = Ember.Application.create({
     Socket: EmberSockets.extend({
         host: 'localhost',
         port: 5000,
-        controllers: ['Entries', 'EditEntry', 'UserProfile'],
+        controllers: ['Application'],
         autoConnect: true
     }),
 });

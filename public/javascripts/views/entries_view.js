@@ -17,6 +17,7 @@ var EntriesView = Ember.View.extend({
 	willDestroyElement: function() {
 	  $(window).unbind("scroll");
 	},
+	
 	isScrolledToBottom: function() {
 		var distanceToTop = $(document).height() - $(window).height(),
 	    	top           = $(document).scrollTop();

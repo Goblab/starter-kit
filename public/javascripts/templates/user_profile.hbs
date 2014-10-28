@@ -18,8 +18,8 @@
 				</div>
 			</div>
 			<div class="row">
-				{{#collection contentBinding="entries"}}
-					{{entry-brief modelBinding=this}}
+				{{#collection contentBinding="user.entries"}}
+					{{entry-brief modelBinding="this"}}
 				{{/collection}}
 			</div>
 		</div>

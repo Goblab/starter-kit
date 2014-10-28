@@ -114,12 +114,15 @@ http.listen(5000, function(){
 });
 
 io.on('connection', function(socket){
-  socket.on('newEntry', function(entry) {
-    socket.broadcast.emit('new_entry', entry);
+
+  socket.on('newRecord', function(entry) {
+    socket.broadcast.emit('newRecord', entry);
   });  
-  socket.on('deleteEntry', function(entry) {
+
+  socket.on('deleteRecord', function(entry) {
     console.log('DELETE_ENTRY');
-    socket.broadcast.emit('delete_entry', entry);
+    socket.broadcast.emit('deleteRecord', entry);
   });    
+  
 });
 
