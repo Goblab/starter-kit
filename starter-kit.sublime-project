@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		},
+		{
+			"follow_symlinks": true,
+			"path": "public/javascripts/templates"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "public/stylesheets/lib/bootstrap"
+		}
+	]
+}

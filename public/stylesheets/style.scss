@@ -32,3 +32,13 @@ $input-border-focus: #2598f9;
 @import "lib/bootstrap-social/bootstrap-social";
 @import "lib/font-awesome/font-awesome";
 
+* {
+	outline: none !important;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}

@@ -5,13 +5,13 @@
 
 
 .menu-wrap a {
-  color: #fff;
+  color: #333;
   text-decoration: none;
 }
 
 .menu-wrap a:hover,
 .menu-wrap a:focus {
-  color: #f1f1f1;
+  color: #888;
 }
 
 .content-wrap {
@@ -55,6 +55,29 @@
   font-size: 1.5em;
   color: transparent;
   background: transparent;
+}
+
+.menu-wrap-menu-button {
+  position: fixed;
+  z-index: 1000;
+  padding: 0;
+  border: none;
+  background: transparent;
+  top: 18px;
+  right: 18px;
+  font-size: 26px;
+  opacity: 1;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+
+}
+
+.menu-wrap-menu-button .fa {
+  color: #333;
 }
 
 .menu-button::before {
@@ -113,16 +136,16 @@
   z-index: 1040;
   width: 300px;
   height: 100%;
-  background: #00b4e1;
+  background: #eee;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
-  -webkit-transform: translate3d(-320px, 0, 0);
-  transform: translate3d(-320px, 0, 0);
+  -webkit-transform: translate3d(-230px, 0, 0);
+  transform: translate3d(-230px, 0, 0);
   -webkit-transition: -webkit-transform 0.4s;
   transition: transform 0.4s;
   -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
   transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-  top: 0;
+  top: 77px;
 }
 
 .menu, 
@@ -218,6 +241,16 @@ transition-timing-function: cubic-bezier(0.7,0,0.3,1);
   opacity: 1;
   -webkit-transition: opacity 0.8s;
   transition: opacity 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.show-menu .menu-wrap-menu-button {
+  opacity: 0;
+  -webkit-transition: opacity 0.0s;
+  transition: opacity 0.0s;
   -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
   transition-timing-function: cubic-bezier(0.7,0,0.3,1);
   -webkit-transform: translate3d(0,0,0);

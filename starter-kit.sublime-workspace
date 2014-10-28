@@ -1,0 +1,260 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "public/javascripts/templates/application.hbs",
+			"settings":
+			{
+				"buffer_size": 2322,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 75.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 374.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/santiago/repositorio/starter-kit/public",
+		"/home/santiago/repositorio/starter-kit/public/javascripts/templates",
+		"/home/santiago/repositorio/starter-kit/public/stylesheets",
+		"/home/santiago/repositorio/starter-kit/public/stylesheets/lib",
+		"/home/santiago/repositorio/starter-kit/public/stylesheets/lib/bootstrap",
+		"/home/santiago/repositorio/starter-kit/public/stylesheets/lib/bootstrap/organism",
+		"/home/santiago/repositorio/starter-kit/public/stylesheets/lib/bootstrap"
+	],
+	"file_history":
+	[
+		"/home/santiago/repositorio/starter-kit/sftp-config.json",
+		"/home/santiago/repositorio/starter-kit/public/stylesheets/lib/bootstrap/organism/_navbar-simple.scss",
+		"/home/santiago/repositorio/starter-kit/public/javascripts/templates/menu.hbs",
+		"/home/santiago/repositorio/starter-kit/public/stylesheets/lib/bootstrap/organism/_breadcrumbs.scss",
+		"/home/santiago/repositorio/starter-kit/public/javascripts/templates/entry.hbs",
+		"/home/santiago/repositorio/starter-kit/public/javascripts/templates/entries.hbs",
+		"/home/santiago/repositorio/starter-kit/public/javascripts/templates/application.hbs",
+		"/home/santiago/repositorio/starter-kit/public/stylesheets/style.scss",
+		"/home/santiago/repositorio/starter-kit/public/stylesheets/lib/bootstrap/utilities/_helpers.scss",
+		"/home/santiago/repositorio/starter-kit/public/javascripts/templates/edit_entry.hbs",
+		"/home/santiago/repositorio/starter-kit/public/stylesheets/lib/bootstrap/utilities/_offcanvas.scss",
+		"/home/santiago/repositorio/starter-kit/node_modules/bower/node_modules/handlebars/coverage/lcov-report/spec/helpers.js.html",
+		"/home/santiago/repositorio/starter-kit/node_modules/bower/node_modules/handlebars/lib/handlebars/compiler/helpers.js",
+		"/home/santiago/repositorio/starter-kit/node_modules/grunt/node_modules/coffee-script/lib/coffee-script/helpers.js",
+		"/home/santiago/repositorio/starter-kit/node_modules/bower/node_modules/request/lib/helpers.js",
+		"/home/santiago/repositorio/starter-kit/node_modules/sequelize/lib/associations/helpers.js",
+		"/home/santiago/repositorio/starter-kit/node_modules/bower/test/helpers.js",
+		"/home/santiago/repositorio/starter-kit/node_modules/bower/templates/json/help-link.json",
+		"/home/santiago/repositorio/starter-kit/node_modules/body-parser/HISTORY.md",
+		"/home/santiago/repositorio/starter-kit/public/stylesheets/style.css",
+		"/home/santiago/repositorio/starter-kit/node_modules/bower/node_modules/inquirer/node_modules/cli-color/node_modules/memoizee/node_modules/es6-weak-map/is-weak-map.js",
+		"/home/santiago/repositorio/starter-kit/node_modules/ejs/test/fixtures/includes/menu-item.ejs",
+		"/home/santiago/repositorio/starter-kit/node_modules/mongoose/examples/population/population-of-multiple-existing-docs.js",
+		"/home/santiago/repositorio/starter-kit/node_modules/.bin/mocha",
+		"/home/santiago/repositorio/starter-kit/public/index.html",
+		"/home/santiago/repositorio/starter-kit/public/javascripts/config/app.js"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"240px",
+			"-320px"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "public/javascripts/templates/application.hbs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2322,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77,
+								78
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Handlebars/Handlebars.tmLanguage",
+							"tab_size": 3,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"project": "starter-kit.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"helpers",
+				"public/stylesheets/lib/bootstrap/utilities/_helpers.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/repositorio/sparv1/sparl.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 325.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

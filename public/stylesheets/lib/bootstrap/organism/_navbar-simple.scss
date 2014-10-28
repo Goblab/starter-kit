@@ -5,23 +5,47 @@
 
 // Base class
 .navbar-simple {
-	min-height: 20px;
+	min-height: 77px;
 	padding: 19px;
 	margin-bottom: 20px;
-	background: #f4f4f4;
-	border-bottom: 3px solid #dbdbdb;
+	background: #03a9f4;
+	border-bottom: 3px solid #039be5;
 	@include box-shadow(inset 0 1px 1px rgba(0,0,0,.05));
 
 	a {
-		color: #3e6372;
+		color: #fff;
 	}
 
 	a:hover {
-		color: #333;
+		color: #f8f8f8;
 
 	}
 
+	.navbar-header {
+		position: fixed;
+		left: 70px;
+		right: 0;
+		padding: 0 15px;
+	}
+
 	.navbar-simple-logo {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 70px;
+		background: #039be5;
+		height: 77px;
+		border-bottom: 3px solid #0288d1;
+
+		.logo-goblab-svg {
+			position: fixed;
+			left: 20px;
+			top: 13px;
+		}
+
+	}
+
+	.navbar-simple-logo-center {
 		position: fixed;
 		top: 18px;
 		left: 50%;
@@ -32,6 +56,8 @@
 		height: 50px;
 		cursor: pointer;
 	}
+
+
 
 	.navbar-toggle {
 
