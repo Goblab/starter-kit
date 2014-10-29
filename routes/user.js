@@ -65,14 +65,19 @@ module.exports = function(app) {
           if (err) return next(err);
           var profileId = null;
           var username = null;
+          var email = null;
+          var userId = null;
           if (profile)
             profileId = profile.id;
-          if (user)
+          if (user) {
             username = user.username;
+            email = user.email;
+            userId = user.id;
+          }
           res.send({ user: {
             username: username,
-            email: user.email,
-            _id: user.id,
+            email: email,
+            _id: userId,
             profile: profileId,
             entries: entriesArr
           }

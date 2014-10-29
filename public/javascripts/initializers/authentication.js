@@ -9,7 +9,16 @@ var Authentication = Ember.Application.initializer({
         if (!Ember.isEmpty(userId)) {
           return container.lookup('store:main').find('user', userId);
         }
-      }.property('user_id')
+      }.property('user_id'),
+
+      currentUserChanged: function () {
+        if (this.get('currentUser')) {
+          if (this.get('currentUser.id') == null) {
+            this.invalidateSession();
+          }
+        }
+      }.observes('currentUser'),
+
     });
     Ember.SimpleAuth.setup(container, application, {
       authorizerFactory: 'ember-simple-auth-authorizer:oauth2-bearer'

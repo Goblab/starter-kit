@@ -20,6 +20,10 @@
 			<div class="row">
 				{{#collection contentBinding="user.entries"}}
 					{{entry-brief model=this}}
+					{{comments-widget model=this}}
+					{{#if controller.session.isAuthenticated}}
+						{{add-comment-widget model=this submit="publishComment"}}
+					{{/if}}					
 				{{/collection}}
 			</div>
 		</div>
