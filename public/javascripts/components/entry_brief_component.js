@@ -11,14 +11,6 @@ var EntryBriefComponent = Ember.Component.extend({
 	initialize: function () {
 		this.$().fadeIn(500);
 	}.on('didInsertElement'),
-
-	actions: {
-		publishComment: function (data) {
-			data.entry = this.get('model');
-			this.sendAction('publishComment', data);
-		}
-	}
-
 });
 
 module.exports = EntryBriefComponent;

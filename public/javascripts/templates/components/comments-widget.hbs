@@ -1,20 +1,6 @@
 <div class="md-col-12">
 	<div class="row">
-		<div class="row">
-			<div class="col-xs-12">
-				<div class='wysiwyg-container'>
-					{{wysiwyg-editor content=message header="Message"}}
-				</div>  
-			</div>
-		</div>
-		<div class="row basic-form-footer">
-			<div class="col-xs-8 col-xs-offset-2">
-				<button class="btn btn-block btn-success pull-right" {{action 'publish'}}>Enviar</button>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-	  	{{#collection contentBinding="model.comments"}}
+	  	{{#collection Ember.VirtualListView height=300 rowHeight=110 contentBinding="model.comments"}}
 	  		{{comment-brief model=this}}
 	  	{{/collection}}		
 	</div>

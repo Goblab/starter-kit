@@ -17,6 +17,9 @@
           </div>
         <hr>
         {{comments-widget modelBinding="model" submit="publishComment"}}
+        {{#if session.isAuthenticated}}
+          {{add-comment-widget model=this submit="publishComment"}}
+        {{/if}}        
         <hr>
         <div class="row">
           <div class="col-md-10 col-md-offset-2 ">
