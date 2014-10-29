@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 
 var fields = {
 	message: { type: String },
-	createdAt: { type: String },
+	createdAt: { type: Date },
 	author: { type: ObjectId, ref: 'userSchema' },
 	entry: { type: ObjectId, ref: 'entrySchema' }
 };

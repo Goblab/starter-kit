@@ -39,10 +39,9 @@ module.exports = function(app) {
     }
     Entry.find(filter)
         .sort({
-            createdAt: 'desc'
+            createdAt: '-1'
         })
         .exec(function(err, entry) {
-            console.log(entry);
             Entry.count().exec(function(err, count) {
                 res.send({
                     entry: entry,

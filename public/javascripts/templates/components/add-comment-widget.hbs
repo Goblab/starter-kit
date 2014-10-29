@@ -1,14 +1,8 @@
 <div class="row">
 	<div class="row">
 		<div class="col-xs-12">
-			<div class='wysiwyg-container'>
-				{{wysiwyg-editor content=message header="Message"}}
-			</div>  
-		</div>
-	</div>
-	<div class="row basic-form-footer">
-		<div class="col-xs-8 col-xs-offset-2">
-			<button class="btn btn-block btn-success pull-right" {{action 'publish'}}>Enviar</button>
+			{{textarea value=message placeholder="Comenta esta publicacion!" class="form-control"}}
+			<button class="btn btn-block btn-info pull-right" {{action 'publish'}}>Comentar</button>
 		</div>
 	</div>
 </div>

@@ -7,14 +7,42 @@ module.exports = function(app) {
 
   // ALL
   api.comments = function (req, res) {
-    Comment.find(function(err, comments) {
-      if (err) {
-        res.json(500, err);
-      } else {    
-        res.json({comments: comments});
-      }
-    });
+    var perPage = 4;
+    var page = Math.max(0, req.param('page'));
+    if (!page)
+      page = 1;
+
+    var filter =  {};
+    for ( var k in req.query ) {
+        if (k == "ids") {
+          filter['_id'] = { $in: req.query[k]};
+        } else {
+          if (k == "message"){
+            filter[k] =  { $regex: req.query[k] };
+          } else {
+            if (k != "page" && k != "per_page")
+              filter[k] = req.query[k];   // probably want to check in the loop
+          }
+        }
+    }
+    Comment.find(filter)
+        .sort({createdAt: "desc"})
+        .exec(function(err, comment) {
+            Entry.count().exec(function(err, count) {
+                if (err)
+                  res.json(500, err);
+
+                res.send({
+                    comment: comment,
+                    meta: {
+                      page: page,
+                      total_pages: Math.max(1, count / perPage)
+                    }
+                })
+            })
+        });
   };
+
 
   // GET
   api.comment = function (req, res) {
