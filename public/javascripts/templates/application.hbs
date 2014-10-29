@@ -22,12 +22,15 @@
            {{#if session.isAuthenticated}}
             <div class="perfil">
                {{#link-to-animated "profile" session.currentUser.profile animations="main:slideLeft" class="nodecoration"}}
-               <div class="hidden-xs">
+               <div class="hidden-xs mar-lv1 pull-left">
                   <span class="h4">
                      {{session.currentUser.username}}
                   </span>
                </div>
-               <img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded mar-lv2 mar-tb0" width="36">
+               <svg class="mar-lv2 mar-tb0 pull-right" x="0px" y="0px" width="36px" height="36px" viewBox="0 0 46.361 46.361" enable-background="new 0 0 46.361 46.361"
+                      xml:space="preserve">
+                     <circle fill="#f0c23b" stroke-miterlimit="10" cx="23.18" cy="23.18" r="22.68"/>
+                  </svg>
                 {{/link-to-animated}}
             </div>
             {{/if}}
@@ -36,8 +39,14 @@
    </header>
 
    <div class="menu-wrap">
-      <button class="btn-link pull-left menu-wrap-menu-button" id="close-button" {{action 'showMenu' target=view}}>
+      <button class="btn-link pull-left menu-wrap-button" id="close-button" {{action 'showMenu' target=view}}>
          <i class="fa fa-bars"></i>
+      </button>
+       <button class="btn-link pull-left menu-search-button" id="close-button">
+         <i class="fa fa-search"></i>
+      </button>
+       <button class="btn-link pull-left menu-favorite-button" id="close-button">
+         <i class="fa fa-star"></i>
       </button>
       {{outlet menu name="menu"}}
    </div>
