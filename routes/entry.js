@@ -2,6 +2,7 @@ module.exports = function(app) {
   // Module dependencies.
   var mongoose = require('mongoose'),
       Entry = mongoose.models.Entry,
+      Comment = mongoose.models.Comment,
       api = {};
 
   // ALL
@@ -36,8 +37,6 @@ module.exports = function(app) {
           }
         }
     }
-    console.log(filter);
-
     Entry.find(filter)
         .sort({
             createdAt: 'desc'

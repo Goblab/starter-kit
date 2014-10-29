@@ -29,7 +29,6 @@ var ApplicationController = Ember.ObjectController.extend({
 
 	sockets: {
 		newRecord: function (message) {
-		console.log(message);
 		  var store = this.get('store');
 		  store.find(message.model, message.data).then(function (record) {
 		  	if (record)

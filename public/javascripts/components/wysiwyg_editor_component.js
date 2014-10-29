@@ -3,6 +3,11 @@ var WysiwygEditorComponent = Ember.Component.extend({
   btnSize: 'btn-xs',
   height: 120,
 
+  contentChanged: function () {
+    if (this.get('content') == '')
+      this.$('.wysiwyg-textarea').code(this.get('content'));
+  }.observes('content'),
+
   willDestroyElement: function() {
     this.$('textarea').destroy();
   },

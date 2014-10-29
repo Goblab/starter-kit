@@ -16,6 +16,8 @@
             </div>
           </div>
         <hr>
+        {{comments-widget modelBinding="model" submit="publishComment"}}
+        <hr>
         <div class="row">
           <div class="col-md-10 col-md-offset-2 ">
               {{#link-to-animated "entries" classNames="btn btn-primary" animations="main:slideLeft"}}

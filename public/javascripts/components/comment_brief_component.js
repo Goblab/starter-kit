@@ -1,5 +1,5 @@
-var EntryBriefComponent = Ember.Component.extend({
-	classNames:['entry-brief', 'fade-out'],
+var CommentBriefComponent = Ember.Component.extend({
+	classNames:['comment-brief', 'fade-out'],
 	format: 'LL',
 	
 	formattedDate: function() {
@@ -11,15 +11,7 @@ var EntryBriefComponent = Ember.Component.extend({
 	initialize: function () {
 		this.$().fadeIn(500);
 	}.on('didInsertElement'),
-
-	actions: {
-		publishComment: function (data) {
-			data.entry = this.get('model');
-			this.sendAction('publishComment', data);
-		}
-	}
-
 });
 
-module.exports = EntryBriefComponent;
+module.exports = CommentBriefComponent;
 

@@ -1,19 +1,21 @@
-var Entry = DS.Model.extend(Ember.Validations.Mixin, {
+var Comment = DS.Model.extend(Ember.Validations.Mixin,{
 
   message: DS.attr('string'),
   author: DS.belongsTo('user'),
-  comments: DS.hasMany('comment', {async: true}),
-
+  entry: DS.belongsTo('entry'),
   createdAt: DS.attr('string', {
       defaultValue: function() { return new Date(); }
   }),
-
+    
   validations: {
+    /*
     message: {
       presence: true,
       length: { minimum: 40 }
     },
-  }    
+    */
+  }
 });
 
-module.exports = Entry;
+module.exports = Comment;
+

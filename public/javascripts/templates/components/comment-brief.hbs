@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="col-xs-8">
+		 <img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded mar-lv2 mar-l0 mar-tb0" width="24">
+		{{#link-to "user_profile" model.author class="h4"}}
+			{{model.author.username}}
+		{{/link-to}}
+	</div>
+	<div class="col-xs-4 text-right">
+		<small class="mar-lv1 mar-lr0 mar-b0 pull-right">
+			<i class="fa fa-clock-o"></i>{{formattedDate}}
+		</small>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-11 entrie-simple-summary">
+		<blockquote>
+			<p>{{{model.message}}}</p>
+		</blockquote>
+	</div>
+</div>
+

@@ -8,9 +8,9 @@ var fields = {
 	message: { type: String },
 	createdAt: { type: String },
 	author: { type: ObjectId, ref: 'userSchema' },
-	comments: [{ type: ObjectId, ref: 'commentSchema' }]
+	entry: { type: ObjectId, ref: 'entrySchema' }
 };
 
-var entrySchema = new Schema(fields);
+var commentSchema = new Schema(fields);
 
-module.exports = mongoose.model('Entry', entrySchema);
+module.exports = mongoose.model('Comment', commentSchema);

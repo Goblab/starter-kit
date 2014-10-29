@@ -6,7 +6,18 @@ var EntryController = Ember.ObjectController.extend({
 		    this.get('model').deleteRecord();
 		    this.get('model').save();
 		    this.get('target.router').transitionTo('entries');
-	    }
+	    },
+	    
+		publishComment: function (data) {
+			_self = this;
+			_self.get('store').find('user', this.get('session.user_id')).then(function (author) {
+				var comment = _self.get('store').createRecord('comment', {message: data.message, entry: data.entry, author: author});
+				comment.save().then(function (comment) {
+					data.entry.reload();
+					_self.get('socket').emit('newRecord', {model: 'entry', data: data.entry.get('id')});
+				});
+			})
+		}	    
 	},
 
 
