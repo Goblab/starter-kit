@@ -1,17 +1,21 @@
-<section class="container ">
-	<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
-		<div class="page-header text-center">
-	    	<h1><b>Crear / editar publicación</b></h1>
+<div class="container-header" style="background: #19a8b2;">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 text-center ">
+			<h1 style="color: #fff">Crear / editar publicación</h1>
 		</div>
+	</div>
+</div>
+<section class="container">
+	<div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
 		{{#form-for controller wrapper="goblabFormWrapper"}}
-			<div class="row">
+			<div class="row mar-lv5">
 				<div class="col-xs-12">
 					<div class='wysiwyg-container'>
 						{{wysiwyg-editor content=message header="Message"}}
 					</div>  
 				</div>
 			</div>
-			<div class="row basic-form-footer">
+			<div class="row mar-lv5 basic-form-footer">
 				<div class="col-xs-8 col-xs-offset-2">
 					{{submit class="btn btn-block btn-success pull-right"}}
 				</div>

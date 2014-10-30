@@ -1,11 +1,17 @@
+<div class="container-header" style="background: #8d6caa;">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3 text-center">
+			<img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded mar-lv8 mar-lr0 mar-b0 inline-block" width="150">
+			<h2 class="mar-lv2 mar-lr0 inline-block" style="color: #fff">
+				{{ name }} <b>{{ last_name }}</b>
+			</h2>
+		</div>
+	</div>
+</div>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3 text-center">
 			<div class="row">
-				<img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-fill-circle-512.png" alt="" class="img-rounded helper-mr10 " width="150">
-				<h2>
-					{{ name }} <b>{{ last_name }}</b>
-				</h2>
 				{{#if canEdit}}
 					{{#linkTo "edit_profile" model}}Edit{{/linkTo}}
 				{{/if}}

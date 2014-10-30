@@ -13,6 +13,10 @@
          </svg>
       {{/link-to-animated }}
 
+      <button class="btn-link menu-wrap-button responsive-menu" id="close-button" {{action 'showMenu' target=view}}>
+         <i class="fa fa-bars"></i>
+      </button>
+
       <div class="navbar-header">
          <div class="pull-left">
             {{outlet actionBar name="actionBar"}}
