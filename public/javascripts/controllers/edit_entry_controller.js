@@ -24,15 +24,16 @@ var EditEntryController = Ember.ObjectController.extend({
     },
 
     submit: function() {
+      that = this;
       if (this.get('model').get('isValid')) {
-          _self = this;
           this.get('model').save().then(function (model) {
-            _self.get('socket').emit('newRecord', {model: 'entry', data: model.get('id')});
-            _self.get('socket').emit('newRecord', {model: 'user', data: model.get('author.id')}); 
+            that.get('socket').emit('newRecord', {model: 'entry', data: model.get('id')});
+            that.get('socket').emit('newRecord', {model: 'user', data: model.get('author.id')}); 
           });
           this.redirectToModel();
       };
     },
+
     cancel: function() {
       this.transitionToRoute('entries');
     }

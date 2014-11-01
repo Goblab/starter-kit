@@ -1,5 +1,5 @@
 var Comment = DS.Model.extend(Ember.Validations.Mixin,{
-
+  order: DS.attr('number'),
   message: DS.attr('string'),
   author: DS.belongsTo('user'),
   entry: DS.belongsTo('entry'),

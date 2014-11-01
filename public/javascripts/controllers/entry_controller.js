@@ -7,7 +7,19 @@ var EntryController = Ember.ObjectController.extend({
 		    this.get('model').save();
 		    this.get('target.router').transitionTo('entries');
 	    },
-	    
+
+	    sort: function (data) {
+	    	var order = 0;
+	    	var sortData  = [];
+	    	data.forEach(function (item) {
+	    		item.set('order', order);
+	    		item.save();
+	    		sortData.pushObject({id: item.id, i: item.order});
+	    		order++;
+	    	});
+	    	this.get('socket').emit('sort', {model: 'comment', data: sortData});
+	    },
+
 		publishComment: function (data) {
 			_self = this;
 			_self.get('store').find('user', this.get('session.user_id')).then(function (author) {

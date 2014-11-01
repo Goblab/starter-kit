@@ -1,6 +1,8 @@
 module.exports = function(app) {
   // Module dependencies.
-
+  var passport = require('passport');
+  var LocalStrategy = require('passport-local').Strategy;
+  
   var mongoose = require('mongoose'),
       User = mongoose.models.User,
       Profile = mongoose.models.Profile,
@@ -8,6 +10,33 @@ module.exports = function(app) {
       api = {};
 
   // ALL
+
+/**
+ * Passport setup.
+ */
+
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
+
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function (err, user) {
+    done(err, user);
+  });
+});
+
+passport.use(new LocalStrategy(function(username, password, done) {
+  User.findOne({ username: username }, function(err, user) {
+    if (err) return done(err);
+    if (!user) return done(null, false);
+    user.comparePassword(password, function(err, isMatch) {
+      if (err) return done(err);
+      if (isMatch) return done(null, user);
+      return done(null, false);
+    });
+  });
+}));
+
   /*
    // Codigo de Mongoose Generator
   api.users = function (req, res) {
@@ -195,6 +224,14 @@ module.exports = function(app) {
       res.send(200);
     });
   };
+
+  app.post('/token', function(req, res, next) {
+    passport.authenticate('local', function(err, user) {
+      if (err) return next(err);
+      if (user) res.send({ access_token: user.token, user_id: user._id });
+      else res.send(404, 'Incorrect username or password.');
+    })(req, res, next);
+  });
 
 
   app.post('/signup', api.addSignup);

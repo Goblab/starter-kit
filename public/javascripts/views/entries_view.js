@@ -10,7 +10,7 @@ var EntriesView = Ember.View.extend({
 
 	didScroll: function() {
 	  if(this.isScrolledToBottom()) {
-	    this.get('controller').send('showMore');
+	    //this.get('controller').send('showMore');
 	  }
 	},
 

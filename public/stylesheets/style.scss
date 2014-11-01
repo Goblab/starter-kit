@@ -48,6 +48,7 @@ html {
 .ember-list-view {
   overflow: auto;
   position: relative;
+  min-height: 10px;
 }
 .ember-list-item-view {
   position: absolute;

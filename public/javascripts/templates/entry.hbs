@@ -16,9 +16,9 @@
             </div>
           </div>
         <hr>
-        {{comments-widget modelBinding="model" submit="publishComment"}}
+        {{comments-widget model=model sort="sort"}}
         {{#if session.isAuthenticated}}
-          {{add-comment-widget model=this submit="publishComment"}}
+          {{add-comment-widget model=model submit="publishComment"}}
         {{/if}}        
         <hr>
         <div class="row">

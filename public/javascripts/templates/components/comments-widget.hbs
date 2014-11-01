@@ -1,7 +1,15 @@
+{{#if comments.arrangedContent}}
 <div class="md-col-12">
 	<div class="row">
-	  	{{#collection Ember.VirtualListView height=300 rowHeight=110 contentBinding="model.comments"}}
-	  		{{comment-brief model=this}}
-	  	{{/collection}}		
+		{{#if moreThanTree}}
+		  	{{#collection Ember.ListView height=300 rowHeight=110 content=comments.arrangedContent}}
+		  		{{comment-brief model=this}}
+		  	{{/collection}}
+		{{else}}
+		  	{{#collection content=comments.arrangedContent}}
+		  		{{comment-brief model=this}}
+		  	{{/collection}}
+		{{/if}}
 	</div>
 </div>
+{{/if}}

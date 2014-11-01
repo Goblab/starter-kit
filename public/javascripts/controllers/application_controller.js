@@ -36,6 +36,15 @@ var ApplicationController = Ember.ObjectController.extend({
 		  });
 		},
 
+		sort: function (message) {
+		  var store = this.get('store');
+		  message.data.forEach(function (item) {
+			  store.find(message.model, item.id).then(function (record) {
+			  	record.set('order', record.order);
+			  });
+		  })
+		},
+
 		deleteRecord: function (message) {
 		  var store = this.get('store');
 		  store.find(message.model, message.data).then(function (record) {

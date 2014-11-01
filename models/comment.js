@@ -7,9 +7,11 @@ var mongoose = require('mongoose'),
 var fields = {
 	message: { type: String },
 	createdAt: { type: Date },
+	order: { type: Number },
 	author: { type: ObjectId, ref: 'userSchema' },
 	entry: { type: ObjectId, ref: 'entrySchema' }
 };
+
 
 var commentSchema = new Schema(fields);
 
