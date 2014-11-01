@@ -227,7 +227,7 @@
 }
 
 .show-menu .content-wrap {
--webkit-transform: translate3d(0,0,0);
+-webkit-transform: translate3d(70px0,0,0);
 transform: translate3d(0,0,0);
 -webkit-transition: -webkit-transform 0.8s;
 transition: transform 0.8s;
@@ -270,4 +270,141 @@ transition-timing-function: cubic-bezier(0.7,0,0.3,1);
   transition-timing-function: cubic-bezier(0.7,0,0.3,1);
   -webkit-transform: translate3d(0,0,0);
   transform: translate3d(0,0,0);
+}
+
+.menu-close-button {
+  -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  -webkit-transform: translate3d(-70px,0,0);
+  transform: translate3d(-70px,0,0);
+  position: fixed;
+  z-index: 1000;
+  padding: 18px 20px 20px 25px;
+  border: medium none;
+  left: 0px;
+  font-size: 26px;
+  opacity: 1;
+  top: 0px;
+
+  .fa {
+    color: #fff;
+  }
+
+}
+
+.show-menu .menu-close-button {
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+
+.logo-goblab-svg {
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.show-menu .responsive-menu,
+.show-menu .menu-close-button {
+  display: none;
+}
+
+.show-menu .responsive-menu {
+
+}
+
+.responsive-menu {
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  -webkit-transform: translate3d(-70px, 0, 0);
+  transform: translate3d(-70px, 0, 0);
+  position: fixed;
+  z-index: 1000;
+   padding: 20px 20px 20px 25px;
+  border: none;
+  background: transparent;
+  left: 0;
+  font-size: 26px;
+  opacity: 1;
+  top: 0;
+
+  .fa {
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu-wrap {
+    position: fixed;
+    z-index: 1040;
+    width: 300px;
+    height: 100%;
+    background: #eee;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+    -webkit-transform: translate3d(-300px, 0, 0);
+    transform: translate3d(-300px, 0, 0);
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    top: 77px;
+  }
+
+  .show-menu .menu-close-button {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    display: block;
+  }
+
+  .menu-close-button {
+    -webkit-transform: translate3d(-70px, 0, 0);
+    transform: translate3d(-70px, 0, 0);
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+  }
+
+  .logo-goblab-svg {
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    -webkit-transform: translate3d(-60px, 0, 0);
+    transform: translate3d(-60px, 0, 0);
+  }
+
+  .responsive-menu {
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  .show-menu .responsive-menu {
+    -webkit-transition: -webkit-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+    -webkit-transform: translate3d(-70px, 0, 0);
+    transform: translate3d(-70px, 0, 0);
+    opacity: 1;
+    display: block;
+  }
 }

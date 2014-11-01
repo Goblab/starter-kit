@@ -49,7 +49,7 @@ body {
 
 .perfil { 
   position: relative;
-  top: 3px;
+  top: 0;
   float: left;
 }
 
@@ -59,31 +59,18 @@ body {
   margin-right: 5px;
 }
 
-
-
-.ember-animated-container {
-top: 0;
-bottom: 0;
-left: 70px;
-right: 0;
-position: absolute;
-height: auto !important;
-width: auto !important;
-margin-top: 77px;
-}
-
 .fade-out {
   display: none;
 }
 
 .container-header {
   width: 100%;
-  height: 400px;
+  height: 200px;
   background: #ddd;
 
   h1 {
     position: relative;
-    top: 200px;
+    top: 100px;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -97,67 +84,5 @@ margin-top: 77px;
   }
 }
 
-.logo-goblab-svg {
-  -webkit-transition: opacity 0.8s;
-  transition: opacity 0.8s;
-  -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-  transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
-
-.responsive-menu {
-  -webkit-transition: opacity 0.8s;
-  transition: opacity 0.8s;
-  -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-  transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-  -webkit-transform: translate3d(-70px, 0, 0);
-  transform: translate3d(-70px, 0, 0);
-  position: fixed;
-  z-index: 1000;
-  padding: 0;
-  border: none;
-  background: transparent;
-  left: 25px;
-  font-size: 26px;
-  opacity: 1;
-
-  .fa {
-    color: #fff;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .menu-wrap {
-    -webkit-transition: opacity 0.8s;
-    transition: opacity 0.8s;
-    -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-    -webkit-transform: translate3d(-300px, 0, 0);
-    transform: translate3d(-300px, 0, 0);
-  }
-
-  .ember-animated-container {
-    left: 0;
-  }
-
-  .logo-goblab-svg {
-    -webkit-transition: opacity 0.8s;
-    transition: opacity 0.8s;
-    -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-    -webkit-transform: translate3d(-60px, 0, 0);
-    transform: translate3d(-60px, 0, 0);
-  }
-
-  .responsive-menu {
-    -webkit-transition: opacity 0.8s;
-    transition: opacity 0.8s;
-    -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-    transition-timing-function: cubic-bezier(0.7,0,0.3,1);
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
 
 
