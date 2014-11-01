@@ -18,11 +18,11 @@
 				</div>
 			</div>
 			<div class="row">
-				{{#collection contentBinding="user.entries"}}
-					{{entry-brief model=this}}
-					{{comments-widget model=this}}
+				{{#collection contentBinding="user.entries" class="view-entries"}}
+					{{entry-brief model=this class="entries-simple"}}
+					{{comments-widget model=this lass="view-comments" }}
 					{{#if controller.session.isAuthenticated}}
-						{{add-comment-widget model=this submit="publishComment"}}
+						{{add-comment-widget model=this submit="publishComment" class="view-add-comments"}}
 					{{/if}}					
 				{{/collection}}
 			</div>

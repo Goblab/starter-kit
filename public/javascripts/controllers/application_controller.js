@@ -10,7 +10,7 @@ var ApplicationController = Ember.ObjectController.extend({
 		{
 			name: 'Publicar',
 			action: 'publish',
-			class: 'btn-success',
+			class: 'btn-warning',
 			icon: 'fa-plus',
 			private: true,
 		}
