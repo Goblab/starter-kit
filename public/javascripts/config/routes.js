@@ -22,7 +22,7 @@ App.Router.map(function() {
   this.route('new_entry', {path: '/entries/new'});
   // end generated routes
 
-
+  this.route('bad_url', { path: '/*badurl' });
 
 });
 

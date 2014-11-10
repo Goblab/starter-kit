@@ -26,10 +26,11 @@ var ApplicationController = Ember.ObjectController.extend({
 		},
 
 		back: function () {
-			Ember.AnimatedContainerView.enqueueAnimations({main: 'slideRight'});	
+			Ember.AnimatedContainerView.enqueueAnimations({main: 'slideRight'});
 		    this.get('history').popObject();
 		    window.history.back(); 
 		    this.get('history').popObject();
+
 		},
 	},
 
