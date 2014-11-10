@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 view-entries">
+      {{#linkTo "new_rabit"}}New Rabit{{/linkTo}}
+      {{#collection contentBinding="controller"}}
+        {{rabit-brief modelBinding=this}}
+      {{/collection}}
+    </div>
+  </div>
+</div>

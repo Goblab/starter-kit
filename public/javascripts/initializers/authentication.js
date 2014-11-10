@@ -6,19 +6,18 @@ var Authentication = Ember.Application.initializer({
     Ember.SimpleAuth.Session.reopen({
       currentUser: function() {
         var userId = this.get('user_id');
+        var _self = this;
         if (!Ember.isEmpty(userId)) {
-          return container.lookup('store:main').find('user', userId);
+          return new Ember.RSVP.Promise(function(resolve, reject) {
+            container.lookup('store:main').find('user', userId).then(function (user) {
+              resolve(user);
+            }, function (error) {
+              _self.invalidate();
+              reject();
+            });            
+          });
         }
       }.property('user_id'),
-
-      currentUserChanged: function () {
-        if (this.get('currentUser')) {
-          if (this.get('currentUser.id') == null) {
-            this.invalidateSession();
-          }
-        }
-      }.observes('currentUser'),
-
     });
     Ember.SimpleAuth.setup(container, application, {
       authorizerFactory: 'ember-simple-auth-authorizer:oauth2-bearer'

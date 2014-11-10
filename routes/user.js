@@ -102,6 +102,8 @@ passport.use(new LocalStrategy(function(username, password, done) {
             username = user.username;
             email = user.email;
             userId = user.id;
+          } else {
+            return next(err);
           }
           res.send({ user: {
             username: username,

@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+		
+		<p>
+		  <b>Name:</b> {{ name }}
+		</p>
+		
+    </div>
+	<div class="row">
+      <div class="col-md-10 col-md-offset-2 ">
+		{{#link-to-animated "rabits" classNames="btn btn-primary" animations="main:slideLeft"}}<i class="fa fa-arrow-left"></i>All Rabits {{/link-to-animated}}
+        {{#if session.isAuthenticated}}
+            {{#link-to-animated "edit_rabit" model classNames="btn btn-success" animations="main:slideLeft"}}
+              <i class="fa fa-pencil"></i> Edit
+            {{/link-to-animated}}
+            <a href="#" class="btn btn-danger" {{action "destroy"}}>
+              <i class="fa fa-trash-o"></i> Destroy
+            </a>
+        {{/if}}
+      </div>
+    </div>    
+</div>
