@@ -1,4 +1,6 @@
 var EntriesController = Em.PaginationController.extend({
+  	breadCrumb: 'Entradas',
+	breadCrumbPath: 'entries',
 
 	modelInfo: {
     	store: 'entry',

@@ -231,7 +231,8 @@ passport.use(new LocalStrategy(function(username, password, done) {
     passport.authenticate('local', function(err, user) {
       if (err) return next(err);
       if (user) res.send({ access_token: user.token, user_id: user._id });
-      else res.send(404, 'Incorrect username or password.');
+      else res.json(400,  {error:"invalid_request", error_description:"Incorrect username or password."});
+      
     })(req, res, next);
   });
 

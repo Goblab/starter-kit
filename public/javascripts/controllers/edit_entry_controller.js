@@ -11,11 +11,6 @@ var EditEntryController = Ember.ObjectController.extend({
   ],
 
   actions: {
-    back: function () {
-      Ember.AnimatedContainerView.enqueueAnimations({main: 'slideRight'});  
-      history.go(-1);
-    },
-
     submit: function() {
       that = this;
       if (this.get('model').get('isValid')) {

@@ -14,6 +14,11 @@ ApplicationRoute = Ember.Route.extend(Ember.SimpleAuth.ApplicationRouteMixin, {
 		 this.transitionToAnimated('unauthorized', {main: 'slideLeft'});
    	},
 
+    sessionAuthenticationFailed: function(error) {
+      error = JSON.parse(error);
+      this.controllerFor('login').set('errorMessage', error.error_description);
+    },
+
 	  loading: function(transition, originRoute) {
      var view = this.container.lookup('view:loading').append();
      this.set('loadingView', view);
