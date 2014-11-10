@@ -2,13 +2,6 @@ var EditEntryController = Ember.ObjectController.extend({
 
   actionsList: [
     {
-      name: 'Volver',
-      action: 'back',
-      class: 'btn-defaul',
-      icon: 'fa-share',
-      private: false,
-    },
-    {
       name: 'Guardar',
       action: 'submit',
       class: 'btn-success',

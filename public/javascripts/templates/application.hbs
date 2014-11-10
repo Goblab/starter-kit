@@ -19,8 +19,14 @@
       <button class="btn-link menu-close-button" id="close-button">
         <i class="fa fa-times"></i>
       </button>
-
       <div class="navbar-header">
+
+         <div class ="pull-right">
+            {{#if hasHistory}}
+              <a {{action 'back'}} class="btn btn-xs btn-defaul btn-round"><i class="fa fa-share"></i>Volver</a>
+            {{/if}}
+         </div>
+
          <div class="pull-right">
             {{outlet actionBar name="actionBar"}}
          </div>

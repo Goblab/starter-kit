@@ -1,13 +1,6 @@
 var ApplicationController = Ember.ObjectController.extend({
 	actionsList: [
 		{
-			name: 'Volver',
-			action: 'back',
-			class: 'btn-defaul',
-			icon: 'fa-share',
-			private: false,
-		},
-		{
 			name: 'Publicar',
 			action: 'publish',
 			class: 'btn-warning',
@@ -16,6 +9,17 @@ var ApplicationController = Ember.ObjectController.extend({
 		}
 	],
 
+	history: [],
+
+	hasHistory: function(){
+		return this.get('history.length')>1;
+	}.property('history.length'),
+
+	watchHistory: function(){
+		this.get('history').pushObject(this.get('currentPath'));
+	}.observes('currentPath'),
+
+
 	actions: {
 		publish: function () {
 			this.get('target').transitionToAnimated('new_entry', {main: 'slideLeft'});
@@ -23,7 +27,9 @@ var ApplicationController = Ember.ObjectController.extend({
 
 		back: function () {
 			Ember.AnimatedContainerView.enqueueAnimations({main: 'slideRight'});	
-    		history.go(-1);
+		    this.get('history').popObject();
+		    window.history.back(); 
+		    this.get('history').popObject();
 		},
 	},
 
