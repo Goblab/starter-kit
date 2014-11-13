@@ -10,8 +10,7 @@ var passport = require('passport');
 
 var path = require('path');
 var sass = require('node-sass');
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+
 
 var methodOverride = require('method-override');
 var morgan = require('morgan');
@@ -21,8 +20,20 @@ var errorhandler = require('errorhandler');
 var fs = require('fs');
 
 
+var express = require('express')  
+, app = express()
+, server = require('http').createServer(app)
+, io = require("socket.io").listen(server)
+
 //var app = express();
-var app = module.exports = exports.app = express();
+/*var app = module.exports = exports.app = express();
+
+var app = 
+
+var io = require('socket.io');
+
+io.listen(app);
+*/
 
 app.locals.siteName = "Goblab starter";
 
@@ -49,6 +60,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(app.router);
 
+
 app.use(function(err, req, res, next){
   console.error(err.stack);
   res.send(500, { message: 'Internal Server Error'});
@@ -63,13 +75,10 @@ fs.readdirSync(routesPath).forEach(function(file) {
 });
 
 
-app.listen(app.get('port'), function() {
+server.listen(app.get('port'), function() {
   console.log('Express server running on port ' + app.get('port'));
 });
 
-http.listen(5000, function(){
-  console.log('listening on *:5000');
-});
 
 io.on('connection', function(socket){
   socket.on('newRecord', function(message) {

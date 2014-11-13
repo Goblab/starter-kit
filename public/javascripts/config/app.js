@@ -3,11 +3,12 @@ var App = Ember.Application.create({
     LOG_TRANSITIONS: true,
     Socket: EmberSockets.extend({
         host: 'localhost',
-        port: 5000,
+        port: 3000,
         controllers: ['Application'],
         autoConnect: true
     }),
 });
+
 App.TiEmberSortableComponent = TiEmberSortable;
 
 App.AutoSuggestComponent = window.AutoSuggestComponent;
